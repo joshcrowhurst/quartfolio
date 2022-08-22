@@ -326,43 +326,6 @@ ojs_define(ojsData = data)
 
 ```
 
-```{ojs echo = FALSE}
-//| echo: false
-viewof bill_length_min = Inputs.range(
-  [32, 50], 
-  {value: 35, step: 1, label: "Bill length (min):"}
-)
-viewof islands = Inputs.checkbox(
-  ["Search", "Social", "Display"], 
-  { value: ["Google Search", "Social Media", "Online Banner & Programmatic"], 
-    label: "Channels:"
-  }
-)
-```
-
-```{ojs echo = FALSE}
-//| echo: false
-filtered = ojsData.filter(function(penguin) {
-  return bill_length_min < penguin.bill_length &&
-         islands.includes(penguin.island);
-})
-```
-
-```{ojs echo = FALSE}
-//| echo: false
-Plot.rectY(filtered, 
-  Plot.binX(
-    {y: "Incremental Approved Credit Cards"}, 
-    {x: "Spend ($USD)", fill: "Advertising Channel", thresholds: 20}
-  ))
-  .plot(
-    marks: [
-      Plot.frame(),
-    ]
-  }
-)
-```
-
 https://www.liftlab.com for ideas on how to frame this
 :::: {.columns}
 
@@ -383,45 +346,56 @@ img here
 
 ## Placing the Right Bets
 <!-- Slide 4: Your solution. How did you solve the problem in the prior slide? Include screenshots of charts, reports, or architectural diagrams of what you built. -->
-```{ojs echo = FALSE}
-//| panel: input
-//| layout-ncol: 3
-
-viewof ch = checkbox({
-  title: "Passport color:",
-  options: [
-    { value: "red", label: "Red" },
-    { value: "green", label: "Green" },
-    { value: "blue", label: "Blue" },
-    { value: "black", label: "Black" }
-  ],
-  value: ["red", "green", "blue", "black"],
-  submit: false
-})
-
-viewof type = radio({
-  title: "Representation:",
-  options: [
-    { label: 'Passports', value: 'p' },
-    { label: 'Circles', value: 'c' }
-  ],
-  value: 'p'
-})
-
-viewof k = slider({
-  title: "Symbol size:",
-  min: 1,
-  max: 10,
-  value: 3,
-  step: 1
-})
-```
-xx
-
 -   We ran a model that suggested we were under-invested in paid search
 -   We tested the assumption with a matched market test (explain)
 -   We found incremental xyz, worth $xx in profit over the course of a year  
 
+```{ojs}
+//| panel: sidebar
+viewof Spend_social = Inputs.range(
+  [0, 25200], 
+  {value: 0, step: 400, label: "Social Media Spend"}
+)
+viewof Spend_search = Inputs.range(
+  [0, 25200], 
+  {value: 0, step: 400, label: "Paid Search Spend"}
+)
+viewof Spend_display = Inputs.range(
+  [0, 25200], 
+  {value: 0, step: 400, label: "Online Display Spend"}
+)
+```
+
+```{ojs}
+//| panel: fill
+Plot.plot({
+  marks: [
+    Plot.line(data, 
+      { x: "Spend", y: "Additional Incremental Approved Credit Cards", stroke: "channel" }
+    ),
+    Plot.text(data, Plot.selectLast({x: "Spend", y: "Additional Incremental Approved Credit Cards", z: "channel", text: "channel", textAnchor: "start", dx: 3})),
+    Plot.dot(filtered,{x: "Spend", y: "Additional Incremental Approved Credit Cards", stroke: "channel", fill: "channel"})
+  ]
+})
+```
+
+The current total spend is **$${Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))}**
+
+Remaining budget to be allocated: **$${Number("36000") - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))}**
+
+Predicted approved credit cards: #
+
+```{ojs}
+data = FileAttachment("palmer-penguins.csv").csv({ typed: true })
+```
+
+```{ojs}
+filtered = data.filter(function(penguin) {
+  return Spend_social == penguin.Spend && penguin.channel.includes("Social Media") ||
+    Spend_display == penguin.Spend && penguin.channel.includes("Online Banner & Programmatic") ||
+      Spend_search == penguin.Spend && penguin.channel.includes("Google Search");
+})
+```
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::

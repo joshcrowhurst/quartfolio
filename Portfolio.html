@@ -443,74 +443,6 @@
 <div class="cell">
 
 </div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="331" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 330;"><span id="cb1-331"><a href="#cb1-331"></a>viewof bill_length_min <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb1-332"><a href="#cb1-332"></a>  [<span class="dv">32</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> </span>
-<span id="cb1-333"><a href="#cb1-333"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">35</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Bill length (min):"</span>}</span>
-<span id="cb1-334"><a href="#cb1-334"></a>)</span>
-<span id="cb1-335"><a href="#cb1-335"></a>viewof islands <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
-<span id="cb1-336"><a href="#cb1-336"></a>  [<span class="st">"Search"</span><span class="op">,</span> <span class="st">"Social"</span><span class="op">,</span> <span class="st">"Display"</span>]<span class="op">,</span> </span>
-<span id="cb1-337"><a href="#cb1-337"></a>  { <span class="dt">value</span><span class="op">:</span> [<span class="st">"Google Search"</span><span class="op">,</span> <span class="st">"Social Media"</span><span class="op">,</span> <span class="st">"Online Banner &amp; Programmatic"</span>]<span class="op">,</span> </span>
-<span id="cb1-338"><a href="#cb1-338"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Channels:"</span></span>
-<span id="cb1-339"><a href="#cb1-339"></a>  }</span>
-<span id="cb1-340"><a href="#cb1-340"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="344" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 343;"><span id="cb2-344"><a href="#cb2-344"></a>filtered <span class="op">=</span> ojsData<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
-<span id="cb2-345"><a href="#cb2-345"></a>  <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length</span> <span class="op">&amp;&amp;</span></span>
-<span id="cb2-346"><a href="#cb2-346"></a>         islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
-<span id="cb2-347"><a href="#cb2-347"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="quarto-ojs-syntax-error">
-<div class="sourceCode" id="cb3" data-startfrom="351" data-syntax-error-position="174" data-source-offset="9"><pre class="sourceCode numberSource numberLines java number-lines code-with-copy"><code class="sourceCode java" style="counter-reset: source-line 350;"><span id="cb3-351"><a href="#cb3-351"></a>```<span class="op">{</span>ojs<span class="op">}</span></span>
-<span id="cb3-352"><a href="#cb3-352"></a><span class="co">//| echo: false</span></span>
-<span id="cb3-353"><a href="#cb3-353"></a>Plot<span class="op">.</span><span class="fu">rectY</span><span class="op">(</span>filtered<span class="op">,</span> </span>
-<span id="cb3-354"><a href="#cb3-354"></a>  Plot<span class="op">.</span><span class="fu">binX</span><span class="op">(</span></span>
-<span id="cb3-355"><a href="#cb3-355"></a>    <span class="op">{</span>y<span class="op">:</span> <span class="st">"Incremental Approved Credit Cards"</span><span class="op">},</span> </span>
-<span id="cb3-356"><a href="#cb3-356"></a>    <span class="op">{</span>x<span class="op">:</span> <span class="st">"Spend ($USD)"</span><span class="op">,</span> fill<span class="op">:</span> <span class="st">"Advertising Channel"</span><span class="op">,</span> thresholds<span class="op">:</span> <span class="dv">20</span><span class="op">}</span></span>
-<span id="cb3-357"><a href="#cb3-357"></a>  <span class="op">))</span></span>
-<span id="cb3-358"><a href="#cb3-358"></a>  <span class="op">.</span><span class="fu">plot</span><span class="op">(</span></span>
-<span id="cb3-359"><a href="#cb3-359"></a>    marks<span class="op">:</span> <span class="op">[</span></span>
-<span id="cb3-360"><a href="#cb3-360"></a>      Plot<span class="op">.</span><span class="fu">frame</span><span class="op">(),</span></span>
-<span id="cb3-361"><a href="#cb3-361"></a>    <span class="op">]</span></span>
-<span id="cb3-362"><a href="#cb3-362"></a>  <span class="op">}</span></span>
-<span id="cb3-363"><a href="#cb3-363"></a><span class="op">)</span></span>
-<span id="cb3-364"><a href="#cb3-364"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<div class="callout callout-important callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>OJS Syntax Error (line 359, column 10)Unexpected token</strong></p>
-</div>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-</div>
-</div>
 <p>https://www.liftlab.com for ideas on how to frame this :::: {.columns}</p>
 <div class="column" style="width:50%;">
 <ul>
@@ -529,63 +461,87 @@
 <section id="placing-the-right-bets" class="slide level2">
 <h2>Placing the Right Bets</h2>
 <!-- Slide 4: Your solution. How did you solve the problem in the prior slide? Include screenshots of charts, reports, or architectural diagrams of what you built. -->
-<div class="cell panel-input" data-layout-ncol="3">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="390" data-source-offset="-1"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 389;"><span id="cb4-390"><a href="#cb4-390"></a>viewof ch <span class="op">=</span> <span class="fu">checkbox</span>({</span>
-<span id="cb4-391"><a href="#cb4-391"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">"Passport color:"</span><span class="op">,</span></span>
-<span id="cb4-392"><a href="#cb4-392"></a>  <span class="dt">options</span><span class="op">:</span> [</span>
-<span id="cb4-393"><a href="#cb4-393"></a>    { <span class="dt">value</span><span class="op">:</span> <span class="st">"red"</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Red"</span> }<span class="op">,</span></span>
-<span id="cb4-394"><a href="#cb4-394"></a>    { <span class="dt">value</span><span class="op">:</span> <span class="st">"green"</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Green"</span> }<span class="op">,</span></span>
-<span id="cb4-395"><a href="#cb4-395"></a>    { <span class="dt">value</span><span class="op">:</span> <span class="st">"blue"</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Blue"</span> }<span class="op">,</span></span>
-<span id="cb4-396"><a href="#cb4-396"></a>    { <span class="dt">value</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Black"</span> }</span>
-<span id="cb4-397"><a href="#cb4-397"></a>  ]<span class="op">,</span></span>
-<span id="cb4-398"><a href="#cb4-398"></a>  <span class="dt">value</span><span class="op">:</span> [<span class="st">"red"</span><span class="op">,</span> <span class="st">"green"</span><span class="op">,</span> <span class="st">"blue"</span><span class="op">,</span> <span class="st">"black"</span>]<span class="op">,</span></span>
-<span id="cb4-399"><a href="#cb4-399"></a>  <span class="dt">submit</span><span class="op">:</span> <span class="kw">false</span></span>
-<span id="cb4-400"><a href="#cb4-400"></a>})</span>
-<span id="cb4-401"><a href="#cb4-401"></a></span>
-<span id="cb4-402"><a href="#cb4-402"></a>viewof type <span class="op">=</span> <span class="fu">radio</span>({</span>
-<span id="cb4-403"><a href="#cb4-403"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">"Representation:"</span><span class="op">,</span></span>
-<span id="cb4-404"><a href="#cb4-404"></a>  <span class="dt">options</span><span class="op">:</span> [</span>
-<span id="cb4-405"><a href="#cb4-405"></a>    { <span class="dt">label</span><span class="op">:</span> <span class="st">'Passports'</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">'p'</span> }<span class="op">,</span></span>
-<span id="cb4-406"><a href="#cb4-406"></a>    { <span class="dt">label</span><span class="op">:</span> <span class="st">'Circles'</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">'c'</span> }</span>
-<span id="cb4-407"><a href="#cb4-407"></a>  ]<span class="op">,</span></span>
-<span id="cb4-408"><a href="#cb4-408"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">'p'</span></span>
-<span id="cb4-409"><a href="#cb4-409"></a>})</span>
-<span id="cb4-410"><a href="#cb4-410"></a></span>
-<span id="cb4-411"><a href="#cb4-411"></a>viewof k <span class="op">=</span> <span class="fu">slider</span>({</span>
-<span id="cb4-412"><a href="#cb4-412"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">"Symbol size:"</span><span class="op">,</span></span>
-<span id="cb4-413"><a href="#cb4-413"></a>  <span class="dt">min</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
-<span id="cb4-414"><a href="#cb4-414"></a>  <span class="dt">max</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
-<span id="cb4-415"><a href="#cb4-415"></a>  <span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
-<span id="cb4-416"><a href="#cb4-416"></a>  <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
-<span id="cb4-417"><a href="#cb4-417"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<p>xx</p>
 <ul>
 <li>We ran a model that suggested we were under-invested in paid search</li>
 <li>We tested the assumption with a matched market test (explain)</li>
 <li>We found incremental xyz, worth $xx in profit over the course of a year</li>
 </ul>
+<div class="layout-sidebar layout-sidebar-left">
+<div class="cell panel-sidebar">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="355" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 354;"><span id="cb1-355"><a href="#cb1-355"></a>viewof Spend_social <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb1-356"><a href="#cb1-356"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
+<span id="cb1-357"><a href="#cb1-357"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Social Media Spend"</span>}</span>
+<span id="cb1-358"><a href="#cb1-358"></a>)</span>
+<span id="cb1-359"><a href="#cb1-359"></a>viewof Spend_search <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb1-360"><a href="#cb1-360"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
+<span id="cb1-361"><a href="#cb1-361"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Paid Search Spend"</span>}</span>
+<span id="cb1-362"><a href="#cb1-362"></a>)</span>
+<span id="cb1-363"><a href="#cb1-363"></a>viewof Spend_display <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb1-364"><a href="#cb1-364"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
+<span id="cb1-365"><a href="#cb1-365"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Online Display Spend"</span>}</span>
+<span id="cb1-366"><a href="#cb1-366"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell panel-fill">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="370" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 369;"><span id="cb2-370"><a href="#cb2-370"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb2-371"><a href="#cb2-371"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb2-372"><a href="#cb2-372"></a>    Plot<span class="op">.</span><span class="fu">line</span>(data<span class="op">,</span> </span>
+<span id="cb2-373"><a href="#cb2-373"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span> }</span>
+<span id="cb2-374"><a href="#cb2-374"></a>    )<span class="op">,</span></span>
+<span id="cb2-375"><a href="#cb2-375"></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">selectLast</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">3</span>}))<span class="op">,</span></span>
+<span id="cb2-376"><a href="#cb2-376"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"channel"</span>})</span>
+<span id="cb2-377"><a href="#cb2-377"></a>  ]</span>
+<span id="cb2-378"><a href="#cb2-378"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<p>The current total spend is <strong><span>$<span id="ojs-element-id-1"></span></span></strong></p>
+<p>Remaining budget to be allocated: <strong><span>$<span id="ojs-element-id-2"></span></span></strong></p>
+<p>Predicted approved credit cards: #</p>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="388" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 387;"><span id="cb3-388"><a href="#cb3-388"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"palmer-penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="392" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 391;"><span id="cb4-392"><a href="#cb4-392"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
+<span id="cb4-393"><a href="#cb4-393"></a>  <span class="cf">return</span> Spend_social <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Social Media"</span>) <span class="op">||</span></span>
+<span id="cb4-394"><a href="#cb4-394"></a>    Spend_display <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Online Banner &amp; Programmatic"</span>) <span class="op">||</span></span>
+<span id="cb4-395"><a href="#cb4-395"></a>      Spend_search <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Google Search"</span>)<span class="op">;</span></span>
+<span id="cb4-396"><a href="#cb4-396"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
 <div class="footer">
 <p><a href="mailto:josh.crowhurst@gmail.com"><strong>Contact Me</strong></a></p>
 </div>
@@ -747,6 +703,13 @@
 <div class="footer footer-default">
 
 </div>
+<script type="ojs-module-contents">
+{"contents":[
+  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))}</span>`", "cellName":"ojs-element-id-1"}
+,
+  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${Number(\"36000\") - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))}</span>`", "cellName":"ojs-element-id-2"}
+]}
+</script>
 </section>
     </div>
   </div>
@@ -960,7 +923,7 @@
       });
     </script>
     <script type="ojs-module-contents">
-    {"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"viewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Search\", \"Social\", \"Display\"], \n  { value: [\"Google Search\", \"Social Media\", \"Online Banner & Programmatic\"], \n    label: \"Channels:\"\n  }\n)\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"filtered = ojsData.filter(function(penguin) {\n  return bill_length_min < penguin.bill_length &&\n         islands.includes(penguin.island);\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"\nviewof ch = checkbox({\n  title: \"Passport color:\",\n  options: [\n    { value: \"red\", label: \"Red\" },\n    { value: \"green\", label: \"Green\" },\n    { value: \"blue\", label: \"Blue\" },\n    { value: \"black\", label: \"Black\" }\n  ],\n  value: [\"red\", \"green\", \"blue\", \"black\"],\n  submit: false\n})\n\nviewof type = radio({\n  title: \"Representation:\",\n  options: [\n    { label: 'Passports', value: 'p' },\n    { label: 'Circles', value: 'c' }\n  ],\n  value: 'p'\n})\n\nviewof k = slider({\n  title: \"Symbol size:\",\n  min: 1,\n  max: 10,\n  value: 3,\n  step: 1\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('bill_length_min')"},{"methodName":"interpretQuiet","source":"shinyInput('islands')"},{"methodName":"interpretQuiet","source":"shinyInput('ch')"},{"methodName":"interpretQuiet","source":"shinyInput('type')"},{"methodName":"interpretQuiet","source":"shinyInput('k')"}]}
+    {"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"viewof Spend_social = Inputs.range(\n  [0, 25200], \n  {value: 0, step: 400, label: \"Social Media Spend\"}\n)\nviewof Spend_search = Inputs.range(\n  [0, 25200], \n  {value: 0, step: 400, label: \"Paid Search Spend\"}\n)\nviewof Spend_display = Inputs.range(\n  [0, 25200], \n  {value: 0, step: 400, label: \"Online Display Spend\"}\n)\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.line(data, \n      { x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", stroke: \"channel\" }\n    ),\n    Plot.text(data, Plot.selectLast({x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", z: \"channel\", text: \"channel\", textAnchor: \"start\", dx: 3})),\n    Plot.dot(filtered,{x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", stroke: \"channel\", fill: \"channel\"})\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"data = FileAttachment(\"palmer-penguins.csv\").csv({ typed: true })\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"filtered = data.filter(function(penguin) {\n  return Spend_social == penguin.Spend && penguin.channel.includes(\"Social Media\") ||\n    Spend_display == penguin.Spend && penguin.channel.includes(\"Online Banner & Programmatic\") ||\n      Spend_search == penguin.Spend && penguin.channel.includes(\"Google Search\");\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_social')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_search')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_display')"}]}
     </script>
     <script type="module">
     window._ojs.paths.runtimeToDoc = "../../..";

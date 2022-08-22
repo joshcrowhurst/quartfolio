@@ -13,7 +13,10 @@ To do:
 
 - dot size
 - conditional formatting
-- format of input box
+- format of input box stuff
+- optimal vs total
+- filenames and penguin references
+- cut off text
 
 ::: {#maintab .panel-tabset .ojs-track-layout}
 ## Scenario Tool
@@ -43,8 +46,6 @@ Plot.plot({
     ),
     Plot.text(data, Plot.selectLast({x: "Spend", y: "Additional Incremental Approved Credit Cards", z: "channel", text: "channel", textAnchor: "start", dx: 3})),
     Plot.dot(filtered,{x: "Spend", y: "Additional Incremental Approved Credit Cards", stroke: "channel", fill: "channel"})
-//CAN DO PLOT DOT WITH A FILTERED DATASET THAT FILTERS THE VALUES BY CHANNEL + SPEND - I don't think we need the same dataset on both
-//Plot.dot(athletes, {x: "weight", y: "height", stroke: "sex"}).plot()
   ]
 })
 ```
@@ -52,6 +53,8 @@ Plot.plot({
 The current total spend is **$${Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))}**
 
 Remaining budget to be allocated: **$${Number("36000") - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))}**
+
+Predicted approved credit cards: #
 
 ## Current Spend vs. Optimal
 
@@ -70,6 +73,5 @@ filtered = data.filter(function(penguin) {
   return Spend_social == penguin.Spend && penguin.channel.includes("Social Media") ||
     Spend_display == penguin.Spend && penguin.channel.includes("Online Banner & Programmatic") ||
       Spend_search == penguin.Spend && penguin.channel.includes("Google Search");
-  //some dots are randomly missing but htis works
 })
 ```

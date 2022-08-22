@@ -1,0 +1,82 @@
+---
+title: "Penguins"
+format:
+  html:
+    toc: false
+    echo: false
+    keep-hidden: true
+    code-tools: true
+---
+
+A simple example based on Allison Horst's [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/) dataset. Here we look at how penguin body mass varies across both sex and species (use the provided inputs to filter the dataset by bill length and island):
+
+```{ojs}
+//| panel: input
+viewof Spend_min = Inputs.range(
+  [200, 25200], 
+  {value: 12500, step: 200, label: "Social Media Spending ($ USD):"}
+)
+viewof channel = Inputs.checkbox(
+  ["Google Search", "Social Media", "Online Banner & Programmatic"], 
+  { value: ["Google Search", "Social Media", "Online Banner & Programmatic"], 
+    label: "Channel:"
+  }
+)
+import {vl} from "@vega/vega-lite-api-v5"
+import {printTable} from "@uwdata/data-utilities"
+```
+
+::: {.panel-tabset}
+
+## Plot
+
+```{ojs}
+Plot.rectY(filtered, 
+  Plot.binX(
+    {y: "count"}, 
+    {x: "body_mass", fill: "channel", thresholds: 20}
+  ))
+  .plot({
+    facet: {
+      data: filtered,
+      marginRight: 80
+    },
+    marks: [
+      Plot.frame(),
+    ]
+  }
+)
+```
+
+```{ojs}
+Plot.plot({
+  marks: [
+    Plot.line(filtered, 
+      { x: "Spend", y: "Additional Incremental Approved Credit Cards", stroke: "channel" }
+    ),
+    Plot.text(filtered, Plot.selectLast({x: "Spend", y: "Additional Incremental Approved Credit Cards", z: "channel", text: "channel", textAnchor: "start", dx: 3})),
+    Plot.dot(filtered,{x: })
+CAN DO PLOT DOT WITH A FILTERED DATASET THAT FILTERS THE VALUES BY CHANNEL + SPEND - I don't think we need the same dataset on both
+Plot.dot(athletes, {x: "weight", y: "height", stroke: "sex"}).plot()
+  ]
+})
+```
+
+## Data
+
+```{ojs}
+Inputs.table(filtered)
+```
+
+:::
+
+```{ojs}
+data = FileAttachment("palmer-penguins.csv").csv({ typed: true })
+```
+
+```{ojs}
+filtered = data.filter(function(penguin) {
+  return Spend_min < penguin.Spend &&
+         channel.includes(penguin.channel);
+})
+```

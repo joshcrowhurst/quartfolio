@@ -1,0 +1,592 @@
+---
+title: "Josh Crowhurst: Analytics Portfolio"
+subtitle: "Use arrow keys or swipe to change slide"
+format:
+  revealjs: 
+    theme: default
+    slide-number: true
+    preview-links: auto
+  html:
+    link-external-newwindow: true
+---
+## Hi, I'm Josh 👋 {background="#43464B"}
+::: {layout="[[-1], [1], [-1]]"}
+**This is a short summary of my background:**
+![](timeline.png){fig-align="center"}
+
+:::
+<!-- To do:
+- Animations?
+- Add the power status etc to top of phone img
+- Put the whole thing through a spellcheck
+- Spoof PBI data
+- Footer color on dark slides
+- Reorder data studio
+- Add link to CV
+- Instructions on arrows to navigate
+- For Tableau, consider having it pop up as a modal to interact. Lunapic is the platform to make transparent with ok quality
+- Tweet @ benn stancil
+- Have the cover slide incl a photo background
+- Media dashboard, other ideas: brief note on what each one demonstrates, link to CV
+- APH guys to review 
+- Add email autoresponse on website
+- Colors on title slide text 
+- Light color footer
+- Fix[download my CV](http://www.joshcrowhurst.com)
+- Timelien quality and "a new challenge in your organization?"
+-->
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+# And these are a few projects that I am proud of:
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+## Did revenue from the last dollar you spent cover its cost?
+<!-- A big problem you worked on. Introduce one of your biggest or most impactful projects from a recent job. What was the problem? -->
+```{r}
+library(ggplot2)
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+data <- data.frame(
+                   stringsAsFactors = FALSE,
+                        check.names = FALSE,
+                        "Advertising Channel" = c("Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search","Google Search",
+                                                "Google Search",
+                                                "Google Search","Google Search",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Social Media","Social Media",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic",
+                                                "Online Banner & Programmatic"),
+                             'Spend ($USD)' = c(0L,200L,
+                                                400L,800L,1200L,1600L,2000L,
+                                                2200L,2400L,2800L,3200L,3600L,
+                                                4000L,4400L,4800L,5200L,
+                                                5600L,6000L,6400L,6800L,7200L,
+                                                7600L,8000L,8400L,8800L,
+                                                9200L,9600L,10000L,10400L,10800L,
+                                                11200L,11600L,12000L,12400L,
+                                                12800L,13200L,13600L,14000L,
+                                                14400L,14800L,15200L,15600L,
+                                                16000L,16400L,16800L,17200L,
+                                                17600L,18000L,18400L,18800L,
+                                                19200L,19600L,20000L,20400L,
+                                                20800L,21200L,21600L,22000L,
+                                                22400L,22800L,23200L,23600L,
+                                                24000L,24400L,24800L,25200L,
+                                                0L,200L,400L,800L,1200L,
+                                                1600L,2000L,2200L,2400L,2800L,
+                                                3200L,3600L,4000L,4400L,
+                                                4800L,5200L,5600L,6000L,6400L,
+                                                6800L,7200L,7600L,8000L,
+                                                8400L,8800L,9200L,9600L,10000L,
+                                                10400L,10800L,11200L,11600L,
+                                                12000L,12400L,12800L,13200L,
+                                                13600L,14000L,14400L,14800L,
+                                                15200L,15600L,16000L,16400L,
+                                                16800L,17200L,17600L,18000L,
+                                                18400L,18800L,19200L,19600L,
+                                                20000L,20400L,20800L,21200L,
+                                                21600L,22000L,22400L,22800L,
+                                                23200L,23600L,24000L,24400L,
+                                                24800L,25200L,0L,200L,400L,
+                                                800L,1200L,1600L,2000L,
+                                                2200L,2400L,2800L,3200L,3600L,
+                                                4000L,4400L,4800L,5200L,5600L,
+                                                6000L,6400L,6800L,7200L,
+                                                7600L,8000L,8400L,8800L,9200L,
+                                                9600L,10000L,10400L,10800L,
+                                                11200L,11600L,12000L,12400L,
+                                                12800L,13200L,13600L,14000L,
+                                                14400L,14800L,15200L,15600L,
+                                                16000L,16400L,16800L,17200L,
+                                                17600L,18000L,18400L,18800L,
+                                                19200L,19600L,20000L,20400L,
+                                                20800L,21200L,21600L,22000L,
+                                                22400L,22800L,23200L,23600L,
+                                                24000L,24400L,24800L,25200L),
+          "Incremental Approved Credit Cards" = c(0L,1044L,
+                                                1285L,1526L,1667L,1767L,1845L,
+                                                1878L,1908L,1962L,2008L,
+                                                2049L,2086L,2119L,2149L,2177L,
+                                                2203L,2227L,2249L,2270L,
+                                                2290L,2309L,2327L,2344L,2360L,
+                                                2375L,2390L,2404L,2418L,2431L,
+                                                2444L,2456L,2468L,2479L,
+                                                2490L,2501L,2511L,2521L,2531L,
+                                                2541L,2550L,2559L,2568L,
+                                                2576L,2585L,2593L,2601L,2609L,
+                                                2616L,2624L,2631L,2638L,
+                                                2645L,2652L,2659L,2665L,2672L,
+                                                2678L,2685L,2691L,2697L,2703L,
+                                                2709L,2714L,2720L,2726L,0L,
+                                                46L,106L,167L,202L,227L,
+                                                246L,254L,262L,275L,287L,
+                                                297L,306L,315L,322L,329L,336L,
+                                                342L,347L,353L,357L,362L,
+                                                367L,371L,375L,379L,382L,
+                                                386L,389L,393L,396L,399L,402L,
+                                                405L,407L,410L,413L,415L,
+                                                418L,420L,422L,425L,427L,
+                                                429L,431L,433L,435L,437L,439L,
+                                                441L,443L,445L,446L,448L,
+                                                450L,451L,453L,455L,456L,
+                                                458L,459L,461L,462L,464L,465L,
+                                                466L,0L,462L,598L,733L,
+                                                812L,869L,912L,931L,948L,978L,
+                                                1004L,1027L,1048L,1066L,
+                                                1083L,1099L,1114L,1127L,1140L,
+                                                1152L,1163L,1173L,1183L,
+                                                1193L,1202L,1211L,1219L,1227L,
+                                                1235L,1242L,1249L,1256L,1263L,
+                                                1269L,1275L,1281L,1287L,
+                                                1293L,1298L,1304L,1309L,1314L,
+                                                1319L,1324L,1328L,1333L,
+                                                1338L,1342L,1346L,1350L,1355L,
+                                                1359L,1363L,1366L,1370L,
+                                                1374L,1378L,1381L,1385L,1388L,
+                                                1392L,1395L,1398L,1401L,1405L,
+                                                1408L)
+        )
+data.gathered <- data %>% pivot_wider(id_cols = "Spend ($USD)",
+                                      names_from = "Advertising Channel",
+                                      values_from = 'Incremental Approved Credit Cards')
+
+# User inputs
+searchInput = 800
+searchOutput = subset(data.gathered, `Spend ($USD)` == searchInput)['Google Search'][[1]]
+socialInput = 800
+socialOutput = subset(data.gathered, `Spend ($USD)` == searchInput)['Social Media'][[1]]
+displayInput = 800
+displayOutput = subset(data.gathered, `Spend ($USD)` == searchInput)['Online Banner & Programmatic'][[1]]
+
+# Slider ranges
+searchRange = data.frame(seq(0, 25200, 400))
+socialRange = searchRange
+displayRange = searchRange
+
+ojs_define(ojsData = data)
+
+# Graph output
+# library(plotly)
+# 
+# plot <- ggplot(data = data.gathered, aes(x = `Spend ($USD)`)) +
+#   geom_line(aes(y = `Google Search`), color = "darkred") + 
+#   geom_line(aes(y = `Social Media`), color = "steelblue") +
+#   geom_line(aes(y = `Online Banner & Programmatic`), color = "black") +
+#   # Add user input
+#     geom_point(aes(x = searchInput, y = searchOutput), color = "darkred", size = 4) +
+#     geom_point(aes(x = socialInput, y = socialOutput), color = "steelblue", size = 4) +
+#     geom_point(aes(x = displayInput, y = displayOutput), color = "black", size = 4) +
+#       # Make it look sexy
+#       labs(y = "Incremental Credit Cards")
+#   # scale_color_manual(values = c("darkred", "steelblue"))
+# 
+# fig <- plot_ly(data.gathered, x = ~`Spend ($USD)`)
+# fig <- fig %>% add_lines(y = ~`Google Search`, name = "Google Search Spend")
+# fig <- fig %>% add_lines(y = ~`Social Media`, name = "Social Media Spend")
+# fig <- fig %>% add_lines(y = ~`Online Banner & Programmatic`, name = "Online Banner & Programmatic Spend")
+# fig <- fig %>% layout(
+#     title = "Media Model",
+#     xaxis = list(
+#       rangeselector = list(rangeslider = list(type = "date")),
+#     yaxis = list(title = "Credit Cards")))
+# 
+# fig
+
+
+
+```
+
+```{ojs echo = FALSE}
+//| echo: false
+viewof bill_length_min = Inputs.range(
+  [32, 50], 
+  {value: 35, step: 1, label: "Bill length (min):"}
+)
+viewof islands = Inputs.checkbox(
+  ["Search", "Social", "Display"], 
+  { value: ["Google Search", "Social Media", "Online Banner & Programmatic"], 
+    label: "Channels:"
+  }
+)
+```
+
+```{ojs echo = FALSE}
+//| echo: false
+filtered = ojsData.filter(function(penguin) {
+  return bill_length_min < penguin.bill_length &&
+         islands.includes(penguin.island);
+})
+```
+
+```{ojs echo = FALSE}
+//| echo: false
+Plot.rectY(filtered, 
+  Plot.binX(
+    {y: "Incremental Approved Credit Cards"}, 
+    {x: "Spend ($USD)", fill: "Advertising Channel", thresholds: 20}
+  ))
+  .plot(
+    marks: [
+      Plot.frame(),
+    ]
+  }
+)
+```
+
+https://www.liftlab.com for ideas on how to frame this
+:::: {.columns}
+
+::: {.column width="50%"}
+- The problem: attribution becoming increasingly fraught with cookie death and across walled gardens
+- No clarity on what channels were driving what outcomes
+:::
+
+::: {.column width="50%"}
+img here
+:::
+
+::::
+
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+
+## Placing the Right Bets
+<!-- Slide 4: Your solution. How did you solve the problem in the prior slide? Include screenshots of charts, reports, or architectural diagrams of what you built. -->
+```{ojs echo = FALSE}
+//| panel: input
+//| layout-ncol: 3
+
+viewof ch = checkbox({
+  title: "Passport color:",
+  options: [
+    { value: "red", label: "Red" },
+    { value: "green", label: "Green" },
+    { value: "blue", label: "Blue" },
+    { value: "black", label: "Black" }
+  ],
+  value: ["red", "green", "blue", "black"],
+  submit: false
+})
+
+viewof type = radio({
+  title: "Representation:",
+  options: [
+    { label: 'Passports', value: 'p' },
+    { label: 'Circles', value: 'c' }
+  ],
+  value: 'p'
+})
+
+viewof k = slider({
+  title: "Symbol size:",
+  min: 1,
+  max: 10,
+  value: 3,
+  step: 1
+})
+```
+xx
+
+-   We ran a model that suggested we were under-invested in paid search
+-   We tested the assumption with a matched market test (explain)
+-   We found incremental xyz, worth $xx in profit over the course of a year  
+
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+
+## Logistics Transformation {background-image="containership.png" background-opacity=0.3}
+<!-- Slides 5 and 6: A project that you’re proud of. In the same two-slide format, talk through a problem you’re particularly proud of solving. Instead of a “big” one that you’d typically put on your resume, choose something that demonstrates what type of work you find exciting and motivating -->
+:::: {.columns}
+
+::: {.column width="80%"}
+The process of booking cargo container space to move goods from point A to B has historically been fraught with challenges:
+
+ - Pricing set out in complex, non-standardized contracts
+ - Requiring back-and-forth communication with the carriers that own the ships
+ - Subject to cancellation due to overbooking
+
+Today, the major carriers are rolling out e-commerce style online booking tools. By connecting these tools with their inventory management and demand forecasting data, they can price container space more efficiently. 
+
+This presents opportunities to book at lower prices than the historical approach offers, with the guarantee that the purchase will not be cancelled due to overbooking. Naturally, demand for the lower priced container space is high, and space often sells out before companies can act.
+
+**<span style="color:red">The problem: </span>My client, an international [freight forwarder](https://en.wikipedia.org/wiki/Freight_forwarder){.external target="_blank" icon="true"}, wanted to find an automated way to secure affordable bookings using the e-commerce platforms on behalf of the manufacturers that they represent.**
+:::
+
+::: {.column width="20%"}
+:::
+
+::::
+
+<style>
+.reveal section p {
+    font-size: 0.5em;
+}
+
+.reveal section li {
+    font-size: 0.5em;
+}
+
+.reveal section ul {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+}
+
+.reveal section pre code {
+    font-size: 0.5em;
+}
+</style>
+::: footer
+_Photo by [william william](https://unsplash.com/@william07?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText){.external target="_blank" icon="true"} on [Unsplash]( https://unsplash.com/s/photos/shipping?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText){.external target="_blank" icon="true"}_
+
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+
+## Logistics Transformation 
+<!-- {background-image="containership.png" background-opacity=0.3}-->
+<!-- Slide 4: Your solution. How did you solve the problem in the prior slide? Include screenshots of charts, reports, or architectural diagrams of what you built. -->
+::: {.panel-tabset}
+
+## The Solution
+:::: {.columns}
+
+::: {.column width="50%"}
+xx
+
+- Created data-based buying rules based on historical demand and price attractiveness
+- API connection to major carriers to scan for inventory throughout the day and alert if found; buy by API now in development
+- Tracker and dashboard to track what has been bought
+- Digital tool to distribute what has been bought 
+- Automated alerts to flag upcoming deadlines 
+- Built and delivering value vs to come (use emojis)
+- Pilot phase result: $xx
+
+:::
+
+::: {.column width="50%"}
+<iframe width="100%" height="400" src="https://app.powerbi.com/view?r=eyJrIjoiOTkyYzEyYTEtNjRjNi00NzUzLWJiNTktZmFhODhjNGUyODNlIiwidCI6IjRjNDU4ZTk4LWNhOTQtNGUyZS04ZmQ3LTBhNzVmNTliNzczZCIsImMiOjEwfQ%3D%3D" frameborder="0" style="border:0" allowfullscreen data-external="1" z-index:1></iframe>
+:::
+
+::::
+
+## Detailed Setup
+
+:::
+
+
+<style>
+.reveal section p {
+    font-size: 0.5em;
+}
+
+.reveal section li {
+    font-size: 0.5em;
+}
+
+.reveal section ul {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+}
+
+.reveal section pre code {
+    font-size: 0.5em;
+}
+</style>
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+
+# I also do a lot of personal projects to keep my analytics skills up-to-date. Here are a couple of those: 
+
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+## Quantified Self
+
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+## Quantified Self
+:::: {.columns}
+
+::: {.column width="66%"}
+xyz
+
+:::
+
+::: {.column width="34%"}
+<img class = "overlay" height = 100% src="iphone-transparent.png" frameborder="0" style="z-index:9; right:0px; top:0px; position: absolute; border:0" allowfullscreen data-external="1" pointer-events="none">
+
+<iframe width="290" height="612" src="https://datastudio.google.com/embed/reporting/4c169110-592f-4166-a719-b9b7e90c1962/page/m7v8B" frameborder="0" style="border:0; right:23px; top:37px; position: absolute" allowfullscreen data-external="1" z-index:1></iframe>
+:::
+
+::::
+
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+<style>
+.overlay {
+  pointer-events: none;
+}
+</style>
+
+## Winning Wines 🍷
+
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+
+## Winning Wines 🍷
+
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+# Thanks for reading {background="#43464B"}
+:::: {.columns}
+
+::: {.column width="80%"}
+Get in touch:
+
+- [**josh.crowhurst@gmail.com**](mailto:josh.crowhurst@gmail.com)
+- [**LinkedIn**](https://www.linkedin.com/in/josh-crowhurst/)
+:::
+
+::: {.column width="20%"}
+<img src="memoji.png" frameborder="0" style="z-index:9; right:0px; top:-80px; position: absolute; border:0" allowfullscreen data-external="1" pointer-events="none">
+:::
+
+::::

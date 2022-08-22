@@ -1,0 +1,200 @@
+channel,island,Spend,Additional Incremental Approved Credit Cards,flipper_length,body_mass,sex
+Google Search,Google Search,0,0,181,3750,All
+Google Search,Google Search,200,1044,186,3800,All
+Google Search,Google Search,400,1285,195,3250,All
+Google Search,Google Search,800,1526,NaN,NaN,All
+Google Search,Google Search,1200,1667,193,3450,All
+Google Search,Google Search,1600,1767,190,3650,All
+Google Search,Google Search,2000,1845,181,3625,All
+Google Search,Google Search,2200,1878,195,4675,All
+Google Search,Google Search,2400,1908,193,3475,All
+Google Search,Google Search,2800,1962,190,4250,All
+Google Search,Google Search,3200,2008,186,3300,All
+Google Search,Google Search,3600,2049,180,3700,All
+Google Search,Google Search,4000,2086,182,3200,All
+Google Search,Google Search,4400,2119,191,3800,All
+Google Search,Google Search,4800,2149,198,4400,All
+Google Search,Google Search,5200,2177,185,3700,All
+Google Search,Google Search,5600,2203,195,3450,All
+Google Search,Google Search,6000,2227,197,4500,All
+Google Search,Google Search,6400,2249,184,3325,All
+Google Search,Google Search,6800,2270,194,4200,All
+Google Search,Google Search,7200,2290,174,3400,All
+Google Search,Google Search,7600,2309,180,3600,All
+Google Search,Google Search,8000,2327,189,3800,All
+Google Search,Google Search,8400,2344,185,3950,All
+Google Search,Google Search,8800,2360,180,3800,All
+Google Search,Google Search,9200,2375,187,3800,All
+Google Search,Google Search,9600,2390,183,3550,All
+Google Search,Google Search,10000,2404,187,3200,All
+Google Search,Google Search,10400,2418,172,3150,All
+Google Search,Google Search,10800,2431,180,3950,All
+Google Search,Google Search,11200,2444,178,3250,All
+Google Search,Google Search,11600,2456,178,3900,All
+Google Search,Google Search,12000,2468,188,3300,All
+Google Search,Google Search,12400,2479,184,3900,All
+Google Search,Google Search,12800,2490,195,3325,All
+Google Search,Google Search,13200,2501,196,4150,All
+Google Search,Google Search,13600,2511,190,3950,All
+Google Search,Google Search,14000,2521,180,3550,All
+Google Search,Google Search,14400,2531,181,3300,All
+Google Search,Google Search,14800,2541,184,4650,All
+Google Search,Google Search,15200,2550,182,3150,All
+Google Search,Google Search,15600,2559,195,3900,All
+Google Search,Google Search,16000,2568,186,3100,All
+Google Search,Google Search,16400,2576,196,4400,All
+Google Search,Google Search,16800,2585,185,3000,All
+Google Search,Google Search,17200,2593,190,4600,All
+Google Search,Google Search,17600,2601,182,3425,All
+Google Search,Google Search,18000,2609,179,2975,All
+Google Search,Google Search,18400,2616,190,3450,All
+Google Search,Google Search,18800,2624,191,4150,All
+Google Search,Google Search,19200,2631,186,3500,All
+Google Search,Google Search,19600,2638,188,4300,All
+Google Search,Google Search,20000,2645,190,3450,All
+Google Search,Google Search,20400,2652,200,4050,All
+Google Search,Google Search,20800,2659,187,2900,All
+Google Search,Google Search,21200,2665,191,3700,All
+Google Search,Google Search,21600,2672,186,3550,All
+Google Search,Google Search,22000,2678,193,3800,All
+Google Search,Google Search,22400,2685,181,2850,All
+Google Search,Google Search,22800,2691,194,3750,All
+Google Search,Google Search,23200,2697,185,3150,All
+Google Search,Google Search,23600,2703,195,4400,All
+Google Search,Google Search,24000,2709,185,3600,All
+Google Search,Google Search,24400,2714,192,4050,All
+Google Search,Google Search,24800,2720,184,2850,All
+Google Search,Google Search,25200,2726,192,3950,All
+Social Media,Social Media,0,0,195,3350,All
+Social Media,Social Media,200,46,188,4100,All
+Social Media,Social Media,400,106,190,3050,All
+Social Media,Social Media,800,167,198,4450,All
+Social Media,Social Media,1200,202,190,3600,All
+Social Media,Social Media,1600,227,190,3900,All
+Social Media,Social Media,2000,246,196,3550,All
+Social Media,Social Media,2200,254,197,4150,All
+Social Media,Social Media,2400,262,190,3700,All
+Social Media,Social Media,2800,275,195,4250,All
+Social Media,Social Media,3200,287,191,3700,All
+Social Media,Social Media,3600,297,184,3900,All
+Social Media,Social Media,4000,306,187,3550,All
+Social Media,Social Media,4400,315,195,4000,All
+Social Media,Social Media,4800,322,189,3200,All
+Social Media,Social Media,5200,329,196,4700,All
+Social Media,Social Media,5600,336,187,3800,All
+Social Media,Social Media,6000,342,193,4200,All
+Social Media,Social Media,6400,347,191,3350,All
+Social Media,Social Media,6800,353,194,3550,All
+Social Media,Social Media,7200,357,190,3800,All
+Social Media,Social Media,7600,362,189,3500,All
+Social Media,Social Media,8000,367,189,3950,All
+Social Media,Social Media,8400,371,190,3600,All
+Social Media,Social Media,8800,375,202,3550,All
+Social Media,Social Media,9200,379,205,4300,All
+Social Media,Social Media,9600,382,185,3400,All
+Social Media,Social Media,10000,386,186,4450,All
+Social Media,Social Media,10400,389,187,3300,All
+Social Media,Social Media,10800,393,208,4300,All
+Social Media,Social Media,11200,396,190,3700,All
+Social Media,Social Media,11600,399,196,4350,All
+Social Media,Social Media,12000,402,178,2900,All
+Social Media,Social Media,12400,405,192,4100,All
+Social Media,Social Media,12800,407,192,3725,All
+Social Media,Social Media,13200,410,203,4725,All
+Social Media,Social Media,13600,413,183,3075,All
+Social Media,Social Media,14000,415,190,4250,All
+Social Media,Social Media,14400,418,193,2925,All
+Social Media,Social Media,14800,420,184,3550,All
+Social Media,Social Media,15200,422,199,3750,All
+Social Media,Social Media,15600,425,190,3900,All
+Social Media,Social Media,16000,427,181,3175,All
+Social Media,Social Media,16400,429,197,4775,All
+Social Media,Social Media,16800,431,198,3825,All
+Social Media,Social Media,17200,433,191,4600,All
+Social Media,Social Media,17600,435,193,3200,All
+Social Media,Social Media,18000,437,197,4275,All
+Social Media,Social Media,18400,439,191,3900,All
+Social Media,Social Media,18800,441,196,4075,All
+Social Media,Social Media,19200,443,188,2900,All
+Social Media,Social Media,19600,445,199,3775,All
+Social Media,Social Media,20000,446,189,3350,All
+Social Media,Social Media,20400,448,189,3325,All
+Social Media,Social Media,20800,450,187,3150,All
+Social Media,Social Media,21200,451,198,3500,All
+Social Media,Social Media,21600,453,176,3450,All
+Social Media,Social Media,22000,455,202,3875,All
+Social Media,Social Media,22400,456,186,3050,All
+Social Media,Social Media,22800,458,199,4000,All
+Social Media,Social Media,23200,459,191,3275,All
+Social Media,Social Media,23600,461,195,4300,All
+Social Media,Social Media,24000,462,191,3050,All
+Social Media,Social Media,24400,464,210,4000,All
+Social Media,Social Media,24800,465,190,3325,All
+Social Media,Social Media,25200,466,197,3500,All
+Online Banner & Programmatic,Online Banner & Programmatic,0,0,193,3500,All
+Online Banner & Programmatic,Online Banner & Programmatic,200,462,199,4475,All
+Online Banner & Programmatic,Online Banner & Programmatic,400,598,187,3425,All
+Online Banner & Programmatic,Online Banner & Programmatic,800,733,190,3900,All
+Online Banner & Programmatic,Online Banner & Programmatic,1200,812,191,3175,All
+Online Banner & Programmatic,Online Banner & Programmatic,1600,869,200,3975,All
+Online Banner & Programmatic,Online Banner & Programmatic,2000,912,185,3400,All
+Online Banner & Programmatic,Online Banner & Programmatic,2200,931,193,4250,All
+Online Banner & Programmatic,Online Banner & Programmatic,2400,948,193,3400,All
+Online Banner & Programmatic,Online Banner & Programmatic,2800,978,187,3475,All
+Online Banner & Programmatic,Online Banner & Programmatic,3200,1004,188,3050,All
+Online Banner & Programmatic,Online Banner & Programmatic,3600,1027,190,3725,All
+Online Banner & Programmatic,Online Banner & Programmatic,4000,1048,192,3000,All
+Online Banner & Programmatic,Online Banner & Programmatic,4400,1066,185,3650,All
+Online Banner & Programmatic,Online Banner & Programmatic,4800,1083,190,4250,All
+Online Banner & Programmatic,Online Banner & Programmatic,5200,1099,184,3475,All
+Online Banner & Programmatic,Online Banner & Programmatic,5600,1114,195,3450,All
+Online Banner & Programmatic,Online Banner & Programmatic,6000,1127,193,3750,All
+Online Banner & Programmatic,Online Banner & Programmatic,6400,1140,187,3700,All
+Online Banner & Programmatic,Online Banner & Programmatic,6800,1152,201,4000,All
+Online Banner & Programmatic,Online Banner & Programmatic,7200,1163,192,3500,All
+Online Banner & Programmatic,Online Banner & Programmatic,7600,1173,196,3900,All
+Online Banner & Programmatic,Online Banner & Programmatic,8000,1183,193,3650,All
+Online Banner & Programmatic,Online Banner & Programmatic,8400,1193,188,3525,All
+Online Banner & Programmatic,Online Banner & Programmatic,8800,1202,197,3725,All
+Online Banner & Programmatic,Online Banner & Programmatic,9200,1211,198,3950,All
+Online Banner & Programmatic,Online Banner & Programmatic,9600,1219,178,3250,All
+Online Banner & Programmatic,Online Banner & Programmatic,10000,1227,197,3750,All
+Online Banner & Programmatic,Online Banner & Programmatic,10400,1235,195,4150,All
+Online Banner & Programmatic,Online Banner & Programmatic,10800,1242,198,3700,All
+Online Banner & Programmatic,Online Banner & Programmatic,11200,1249,193,3800,All
+Online Banner & Programmatic,Online Banner & Programmatic,11600,1256,194,3775,All
+Online Banner & Programmatic,Online Banner & Programmatic,12000,1263,185,3700,All
+Online Banner & Programmatic,Online Banner & Programmatic,12400,1269,201,4050,All
+Online Banner & Programmatic,Online Banner & Programmatic,12800,1275,190,3575,All
+Online Banner & Programmatic,Online Banner & Programmatic,13200,1281,201,4050,All
+Online Banner & Programmatic,Online Banner & Programmatic,13600,1287,197,3300,All
+Online Banner & Programmatic,Online Banner & Programmatic,14000,1293,181,3700,All
+Online Banner & Programmatic,Online Banner & Programmatic,14400,1298,190,3450,All
+Online Banner & Programmatic,Online Banner & Programmatic,14800,1304,195,4400,All
+Online Banner & Programmatic,Online Banner & Programmatic,15200,1309,181,3600,All
+Online Banner & Programmatic,Online Banner & Programmatic,15600,1314,191,3400,All
+Online Banner & Programmatic,Online Banner & Programmatic,16000,1319,187,2900,All
+Online Banner & Programmatic,Online Banner & Programmatic,16400,1324,193,3800,All
+Online Banner & Programmatic,Online Banner & Programmatic,16800,1328,195,3300,All
+Online Banner & Programmatic,Online Banner & Programmatic,17200,1333,197,4150,All
+Online Banner & Programmatic,Online Banner & Programmatic,17600,1338,200,3400,All
+Online Banner & Programmatic,Online Banner & Programmatic,18000,1342,200,3800,All
+Online Banner & Programmatic,Online Banner & Programmatic,18400,1346,191,3700,All
+Online Banner & Programmatic,Online Banner & Programmatic,18800,1350,205,4550,All
+Online Banner & Programmatic,Online Banner & Programmatic,19200,1355,187,3200,All
+Online Banner & Programmatic,Online Banner & Programmatic,19600,1359,201,4300,All
+Online Banner & Programmatic,Online Banner & Programmatic,20000,1363,187,3350,All
+Online Banner & Programmatic,Online Banner & Programmatic,20400,1366,203,4100,All
+Online Banner & Programmatic,Online Banner & Programmatic,20800,1370,195,3600,All
+Online Banner & Programmatic,Online Banner & Programmatic,21200,1374,199,3900,All
+Online Banner & Programmatic,Online Banner & Programmatic,21600,1378,195,3850,All
+Online Banner & Programmatic,Online Banner & Programmatic,22000,1381,210,4800,All
+Online Banner & Programmatic,Online Banner & Programmatic,22400,1385,192,2700,All
+Online Banner & Programmatic,Online Banner & Programmatic,22800,1388,205,4500,All
+Online Banner & Programmatic,Online Banner & Programmatic,23200,1392,210,3950,All
+Online Banner & Programmatic,Online Banner & Programmatic,23600,1395,187,3650,All
+Online Banner & Programmatic,Online Banner & Programmatic,24000,1398,196,3550,All
+Online Banner & Programmatic,Online Banner & Programmatic,24400,1401,196,3500,All
+Online Banner & Programmatic,Online Banner & Programmatic,24800,1405,196,3675,All
+Online Banner & Programmatic,Online Banner & Programmatic,25200,1408,201,4450,All
+,s,,,,,

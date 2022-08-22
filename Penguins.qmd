@@ -6,35 +6,36 @@ format:
     echo: false
     keep-hidden: true
     code-tools: true
+    page-layout: full
 ---
 
-Explanation here
+To do:
+
+- dot size
+- conditional formatting
+- format of input box
+
+::: {#maintab .panel-tabset .ojs-track-layout}
+## Scenario Tool
 
 ```{ojs}
-//| panel: input
+//| panel: sidebar
 viewof Spend_social = Inputs.range(
   [0, 25200], 
-  {value: 12000, step: 400, label: "Social Media Spending ($ USD):"}
+  {value: 0, step: 400, label: "Social Media Spending ($ USD):"}
 )
 viewof Spend_search = Inputs.range(
   [0, 25200], 
-  {value: 12000, step: 400, label: "Paid Search Spending ($ USD):"}
+  {value: 0, step: 400, label: "Paid Search Spending ($ USD):"}
 )
 viewof Spend_display = Inputs.range(
   [0, 25200], 
-  {value: 12000, step: 400, label: "Online Banner & Programmatic Spending ($ USD):"}
+  {value: 0, step: 400, label: "Online Banner & Programmatic Spending ($ USD):"}
 )
-
-
-//import {vl} from "@vega/vega-lite-api-v5"
-//import {printTable} from "@uwdata/data-utilities"
 ```
 
-::: {.panel-tabset}
-
-## Plot
-
 ```{ojs}
+//| panel: fill
 Plot.plot({
   marks: [
     Plot.line(data, 
@@ -48,7 +49,11 @@ Plot.plot({
 })
 ```
 
-## Data
+The current total spend is **$${Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))}**
+
+Remaining budget to be allocated: **$${Number("36000") - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))}**
+
+## Current Spend vs. Optimal
 
 ```{ojs}
 Inputs.table(data)

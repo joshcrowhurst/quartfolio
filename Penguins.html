@@ -97,11 +97,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
 
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -119,20 +119,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Explanation here</p>
-<div class="cell panel-input card bg-light p-2">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="15" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 14;"><span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>viewof Spend_social <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Social Media Spending ($ USD):"</span>}</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>viewof Spend_search <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Paid Search Spending ($ USD):"</span>}</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>viewof Spend_display <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<p>To do:</p>
+<ul>
+<li>dot size</li>
+<li>conditional formatting</li>
+<li>format of input box</li>
+</ul>
+<div id="maintab" class="panel-tabset ojs-track-layout">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Scenario Tool</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Current Spend vs.&nbsp;Optimal</a></li></ul>
+<div id="maintab" class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="23" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 22;"><span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>viewof Spend_social <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Online Banner &amp; Programmatic Spending ($ USD):"</span>}</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Social Media Spending ($ USD):"</span>}</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>viewof Spend_search <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Paid Search Spending ($ USD):"</span>}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>viewof Spend_display <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Online Banner &amp; Programmatic Spending ($ USD):"</span>}</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -155,22 +165,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Data</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="37" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 36;"><span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(data<span class="op">,</span> </span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span> }</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">selectLast</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">3</span>}))<span class="op">,</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"channel"</span>})</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">//CAN DO PLOT DOT WITH A FILTERED DATASET THAT FILTERS THE VALUES BY CHANNEL + SPEND - I don't think we need the same dataset on both</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co">//Plot.dot(athletes, {x: "weight", y: "height", stroke: "sex"}).plot()</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="38" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(data<span class="op">,</span> </span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span> }</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">selectLast</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">3</span>}))<span class="op">,</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"channel"</span>})</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co">//CAN DO PLOT DOT WITH A FILTERED DATASET THAT FILTERS THE VALUES BY CHANNEL + SPEND - I don't think we need the same dataset on both</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">//Plot.dot(athletes, {x: "weight", y: "height", stroke: "sex"}).plot()</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
 
@@ -178,9 +186,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
+</div>
+</div>
+<p>The current total spend is <strong><span>$<span id="ojs-element-id-1"></span></span></strong></p>
+<p>Remaining budget to be allocated: <strong><span>$<span id="ojs-element-id-2"></span></span></strong></p>
+</div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="53" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 52;"><span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="58" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 57;"><span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="expression">
 
@@ -191,7 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="59" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 58;"><span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"palmer-penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="64" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 63;"><span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"palmer-penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="declaration">
 
@@ -199,12 +212,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="63" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 62;"><span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Spend_social <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Social Media"</span>) <span class="op">||</span></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>    Spend_display <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Online Banner &amp; Programmatic"</span>) <span class="op">||</span></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>      Spend_search <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Google Search"</span>)<span class="op">;</span></span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>  <span class="co">//some dots are randomly missing but htis works</span></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="68" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 67;"><span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Spend_social <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Social Media"</span>) <span class="op">||</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>    Spend_display <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Online Banner &amp; Programmatic"</span>) <span class="op">||</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>      Spend_search <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Google Search"</span>)<span class="op">;</span></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>  <span class="co">//some dots are randomly missing but htis works</span></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="declaration">
 
@@ -213,12 +226,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <!-- -->
 
+<script type="ojs-module-contents">
+{"contents":[
+  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))}</span>`", "cellName":"ojs-element-id-1"}
+,
+  {"methodName":"interpret","inline":"true","source":"htl.html`<span>${Number(\"36000\") - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))}</span>`", "cellName":"ojs-element-id-2"}
+]}
+</script>
 
 </main>
 <!-- /main column -->
 
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"viewof Spend_social = Inputs.range(\n  [0, 25200], \n  {value: 12000, step: 400, label: \"Social Media Spending ($ USD):\"}\n)\nviewof Spend_search = Inputs.range(\n  [0, 25200], \n  {value: 12000, step: 400, label: \"Paid Search Spending ($ USD):\"}\n)\nviewof Spend_display = Inputs.range(\n  [0, 25200], \n  {value: 12000, step: 400, label: \"Online Banner & Programmatic Spending ($ USD):\"}\n)\n\n\n//import {vl} from \"@vega/vega-lite-api-v5\"\n//import {printTable} from \"@uwdata/data-utilities\"\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.line(data, \n      { x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", stroke: \"channel\" }\n    ),\n    Plot.text(data, Plot.selectLast({x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", z: \"channel\", text: \"channel\", textAnchor: \"start\", dx: 3})),\n    Plot.dot(filtered,{x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", stroke: \"channel\", fill: \"channel\"})\n//CAN DO PLOT DOT WITH A FILTERED DATASET THAT FILTERS THE VALUES BY CHANNEL + SPEND - I don't think we need the same dataset on both\n//Plot.dot(athletes, {x: \"weight\", y: \"height\", stroke: \"sex\"}).plot()\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"Inputs.table(data)\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"data = FileAttachment(\"palmer-penguins.csv\").csv({ typed: true })\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"filtered = data.filter(function(penguin) {\n  return Spend_social == penguin.Spend && penguin.channel.includes(\"Social Media\") ||\n    Spend_display == penguin.Spend && penguin.channel.includes(\"Online Banner & Programmatic\") ||\n      Spend_search == penguin.Spend && penguin.channel.includes(\"Google Search\");\n  //some dots are randomly missing but htis works\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_social')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_search')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_display')"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"viewof Spend_social = Inputs.range(\n  [0, 25200], \n  {value: 0, step: 400, label: \"Social Media Spending ($ USD):\"}\n)\nviewof Spend_search = Inputs.range(\n  [0, 25200], \n  {value: 0, step: 400, label: \"Paid Search Spending ($ USD):\"}\n)\nviewof Spend_display = Inputs.range(\n  [0, 25200], \n  {value: 0, step: 400, label: \"Online Banner & Programmatic Spending ($ USD):\"}\n)\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"Plot.plot({\n  marks: [\n    Plot.line(data, \n      { x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", stroke: \"channel\" }\n    ),\n    Plot.text(data, Plot.selectLast({x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", z: \"channel\", text: \"channel\", textAnchor: \"start\", dx: 3})),\n    Plot.dot(filtered,{x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", stroke: \"channel\", fill: \"channel\"})\n//CAN DO PLOT DOT WITH A FILTERED DATASET THAT FILTERS THE VALUES BY CHANNEL + SPEND - I don't think we need the same dataset on both\n//Plot.dot(athletes, {x: \"weight\", y: \"height\", stroke: \"sex\"}).plot()\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"Inputs.table(data)\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"data = FileAttachment(\"palmer-penguins.csv\").csv({ typed: true })\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"filtered = data.filter(function(penguin) {\n  return Spend_social == penguin.Spend && penguin.channel.includes(\"Social Media\") ||\n    Spend_display == penguin.Spend && penguin.channel.includes(\"Online Banner & Programmatic\") ||\n      Spend_search == penguin.Spend && penguin.channel.includes(\"Google Search\");\n  //some dots are randomly missing but htis works\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_social')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_search')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_display')"}]}
 </script>
 <script type="module">
 window._ojs.paths.runtimeToDoc = "../../..";
@@ -383,68 +403,73 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">    echo: false</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">    keep-hidden: true</span></span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>Explanation here</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">//| panel: input</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>viewof Spend_social <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Social Media Spending ($ USD):"</span>}</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>viewof Spend_search <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Paid Search Spending ($ USD):"</span>}</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>viewof Spend_display <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">    page-layout: full</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>To do:</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>dot size</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>conditional formatting</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>format of input box</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>::: {#maintab .panel-tabset .ojs-track-layout}</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scenario Tool</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co">//| panel: sidebar</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>viewof Spend_social <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Online Banner &amp; Programmatic Spending ($ USD):"</span>}</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Social Media Spending ($ USD):"</span>}</span>
 <span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="co">//import {vl} from "@vega/vega-lite-api-v5"</span></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co">//import {printTable} from "@uwdata/data-utilities"</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="vs">::: {.panel-tabset}</span></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="vs">## Plot</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>viewof Spend_search <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Paid Search Spending ($ USD):"</span>}</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>viewof Spend_display <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>  [<span class="dv">0</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Online Banner &amp; Programmatic Spending ($ USD):"</span>}</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
 <span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(data<span class="op">,</span> </span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span> }</span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">selectLast</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">3</span>}))<span class="op">,</span></span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"channel"</span>})</span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="co">//CAN DO PLOT DOT WITH A FILTERED DATASET THAT FILTERS THE VALUES BY CHANNEL + SPEND - I don't think we need the same dataset on both</span></span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="co">//Plot.dot(athletes, {x: "weight", y: "height", stroke: "sex"}).plot()</span></span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="vs">## Data</span></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(data)</span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="vs">:::</span></span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"palmer-penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Spend_social <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Social Media"</span>) <span class="op">||</span></span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>    Spend_display <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Online Banner &amp; Programmatic"</span>) <span class="op">||</span></span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>      Spend_search <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Google Search"</span>)<span class="op">;</span></span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>  <span class="co">//some dots are randomly missing but htis works</span></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="co">//| panel: fill</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(data<span class="op">,</span> </span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span> }</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">selectLast</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">3</span>}))<span class="op">,</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span>{<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"channel"</span>})</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="co">//CAN DO PLOT DOT WITH A FILTERED DATASET THAT FILTERS THE VALUES BY CHANNEL + SPEND - I don't think we need the same dataset on both</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="co">//Plot.dot(athletes, {x: "weight", y: "height", stroke: "sex"}).plot()</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="vs">The current total spend is **$</span><span class="sc">${</span><span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))<span class="sc">}</span><span class="vs">**</span></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="vs">Remaining budget to be allocated: **$</span><span class="sc">${</span><span class="bu">Number</span>(<span class="st">"36000"</span>) <span class="op">-</span> (<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)))<span class="sc">}</span><span class="vs">**</span></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="vs">## Current Spend vs. Optimal</span></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(data)</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="vs">:::</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"palmer-penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Spend_social <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Social Media"</span>) <span class="op">||</span></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a>    Spend_display <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Online Banner &amp; Programmatic"</span>) <span class="op">||</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a>      Spend_search <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Google Search"</span>)<span class="op">;</span></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>  <span class="co">//some dots are randomly missing but htis works</span></span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="vs">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

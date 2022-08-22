@@ -1,17 +1,19 @@
 ---
 title: "Josh Crowhurst: Analytics Portfolio"
-subtitle: "Use arrow keys or swipe to change slide"
+subtitle: "Use arrow keys or swipe to change slide EMOJI??"
 format:
   revealjs: 
     theme: default
     slide-number: true
     preview-links: auto
+    transition: slide
+    transition-speed: fast
   html:
     link-external-newwindow: true
 ---
 ## Hi, I'm Josh 👋 
 ::: {layout="[[-1], [1], [-1]]"}
-**This is a short summary of my background:**
+This is a short summary of my background:
 ![](timeline.png){fig-align="center"}
 
 :::
@@ -32,8 +34,11 @@ format:
 - Add email autoresponse on website
 - Colors on title slide text 
 - Light color footer
+- MMM facebook use blue google use google color
 - Fix[download my CV](http://www.joshcrowhurst.com)
 - Timelien quality and "a new challenge in your organization?"
+- MAYBE just do mmm, incrementality, and wine
+- Make dots on MMM into diamonds
 -->
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
@@ -42,7 +47,7 @@ format:
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
-## Did revenue from the last dollar you spent cover its cost?
+## Did revenue from the last dollar we spent cover its cost?
 <!-- A big problem you worked on. Introduce one of your biggest or most impactful projects from a recent job. What was the problem? -->
 
 https://www.liftlab.com for ideas on how to frame this
@@ -70,29 +75,32 @@ Test
 -   We ran a model that suggested we were under-invested in paid search
 -   We tested the assumption with a matched market test (explain)
 -   We found incremental xyz, worth $xx in profit over the course of a year
-- BUTTONS FOR RESET, SHOW OPTIMAL
+- BUTTONS FOR RESET, SHOW OPTIMAL. This solution drives xyz cards from a, b and c (conditional: but the budget is overspent by x)
 
 ```{ojs}
 //| panel: sidebar
-viewof Spend_social = Inputs.range(
-  [0, 25200], 
-  {value: 10000, step: 400, label: "Social Media Spend"}
-)
+html`<b style="font-size:1.2em;">Monthly Ad Spend ($USD)</b><br>
+
+<i style="color:#585858; font-style:italic;">Use the sliders to allocate monthly spending by channel</i>
+<hr class="dotted"><p></p>
+`
 viewof Spend_search = Inputs.range(
   [0, 25200], 
-  {value: 10000, step: 400, label: "Paid Search Spend"}
+  {value: 12000, step: 400, label: "Google Search Spend"}
 )
 viewof Spend_display = Inputs.range(
   [0, 25200], 
-  {value: 10000, step: 400, label: "Online Display Spend"}
+  {value: 12000, step: 400, label: "Online Banner Spend"}
 )
-
+viewof Spend_social = Inputs.range(
+  [0, 25200], 
+  {value: 12000, step: 400, label: "Social Media Spend"}
+)
 html`
 <p></p>
 <p id="spend" style="font-size:1em;"></p>
 <p id="budget" style="font-size:1em;"></p>
-<p id="prediction" style="font-size:1em;">Predicted approved credit cards: #</p>
-
+<!-- <p id="prediction" style="font-size:1em;">Predicted approved credit cards: #</p> -->
 
 <style>
 .oi-ec050e {
@@ -104,12 +112,47 @@ html`
 .outputs {
   font-size: 0.5em;
 }
+button.btn {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+hr.dotted {
+  border-top: 0.75px dotted #585858;
+}
 </style>
 `
+{
+  if((36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))) < 0){
+    document.getElementById("budget").style.color= "red";
+    return "Over budget"
+  }else{
+    document.getElementById("budget").style.color= "black";
+    return "Within budget"
+  }
+}
+
+html`
+<hr class="dotted"><p>&nbsp;</p>
+`
+Inputs.button([
+  ["Reset All", () => {set(viewof Spend_search, 12000), 
+                  set(viewof Spend_social, 12000),
+                  set(viewof Spend_display, 12000)}],
+  ["Optimal Mix", () => {set(viewof Spend_search, 13000), 
+                  set(viewof Spend_social, 12000),
+                  set(viewof Spend_display, 11000)}]                
+                  ])
+                  
 document.getElementById("spend").innerHTML = "Total spend: <b>$" + (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))+" USD</b>"
 
 document.getElementById("budget").innerHTML = "Remaining budget: <b>$" + (36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))))+" USD</b>"
-
+html`
+<p>&nbsp;</p>
+`
+function set(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input", {bubbles: true}));
+}
 ```
 
 ```{ojs}
@@ -125,7 +168,15 @@ Plot.plot({
       { x: "Spend", y: "Additional Incremental Approved Credit Cards", stroke: "channel" }
     ),
     Plot.text(data, Plot.selectLast({x: "Spend", y: "Additional Incremental Approved Credit Cards", z: "channel", text: "channel", textAnchor: "start", dx: 3})),
-    Plot.dot(filtered,{x: "Spend", y: "Additional Incremental Approved Credit Cards", stroke: "channel", fill: "channel"})
+    Plot.dot(filtered,{
+      r: {
+        range: [10, 11]
+      },
+      x: "Spend", 
+      y: "Additional Incremental Approved Credit Cards", 
+      r: 7,
+      stroke: "channel", 
+      fill: "white"})
   ]
 })
 ```

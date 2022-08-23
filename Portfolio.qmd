@@ -83,9 +83,12 @@ Test
 -   We tested the assumption with a matched market test (explain)
 -   We found incremental xyz, worth $xx in profit over the course of a year
 - BUTTONS FOR RESET, SHOW OPTIMAL. This solution drives xyz cards from a, b and c (conditional: but the budget is overspent by x)
+<!--
 $$
 Approved Credit Cards = 80 * ln(Search Spend) + 20 * ln(Social Spend) + 45 * ln(DisplaySpend) + 130
 $$
+-->
+
 **Approved Credit Cards** = 80 * ln(<b style='color:#4D77A5;'>Search Spend</b>) + 20 * ln(<b style='color:#F28E2C'>Banner Spend</b>) + 45 * ln(<b style='color:#E15759'>Social Spend</b>) + 130
 
 <p id="formula"></p>
@@ -98,15 +101,15 @@ html`<b style="font-size:1.2em;">Monthly Ad Spend ($USD)</b><br>
 <hr class="dotted"><p></p>
 `
 viewof Spend_search = Inputs.range(
-  [0, 25200], 
+  [400, 25200], 
   {value: 12000, step: 400, label: "Google Search Spend"}
 )
 viewof Spend_display = Inputs.range(
-  [0, 25200], 
+  [400, 25200], 
   {value: 12000, step: 400, label: "Online Banner Spend"}
 )
 viewof Spend_social = Inputs.range(
-  [0, 25200], 
+  [400, 25200], 
   {value: 12000, step: 400, label: "Social Media Spend"}
 )
 html`
@@ -151,12 +154,12 @@ Inputs.button([
   ["Reset All", () => {set(viewof Spend_search, 12000), 
                   set(viewof Spend_social, 12000),
                   set(viewof Spend_display, 12000)}],
-  ["Optimal Mix", () => {set(viewof Spend_search, 13000), 
-                  set(viewof Spend_social, 12000),
-                  set(viewof Spend_display, 11000)}]                
+  ["Optimal Mix", () => {set(viewof Spend_search, 20000), 
+                  set(viewof Spend_social, 4800),
+                  set(viewof Spend_display, 11200)}]                
                   ])
                   
-document.getElementById("formula").innerHTML = "<b>Approved Credit Cards</b> = 80 *ln(<b style='color:#4D77A5;'>" + Number(Spend_search.toFixed(0)) + "</b>) + ln(<b style='color:#F28E2C'>" + (Number(Spend_display.toFixed(0))) + "</b>) + ln(<b style='color:#E15759'>" + (Number(Spend_social.toFixed(0)))+"</b>)"
+document.getElementById("formula").innerHTML = "<b>Approved Credit Cards</b> = 80 * ln(<b style='color:#4D77A5;'>" + Number(Spend_search.toFixed(0)) + "</b>) + 45 * ln(<b style='color:#F28E2C'>" + (Number(Spend_display.toFixed(0))) + "</b>) + 20 * ln(<b style='color:#E15759'>" + (Number(Spend_social.toFixed(0)))+"</b>) + 130 = " + Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130))
 
 document.getElementById("spend").innerHTML = "Total spend: <b>$" + (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))+" USD</b>"
 

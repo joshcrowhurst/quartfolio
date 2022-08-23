@@ -39,6 +39,7 @@ This is a short summary of my background:
 - Timelien quality and "a new challenge in your organization?"
 - MAYBE just do mmm, incrementality, and wine
 - Make dots on MMM into diamonds
+- MMM numbers in base data do not correspond to the graph
 -->
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
@@ -83,22 +84,17 @@ Test
 -   We tested the assumption with a matched market test (explain)
 -   We found incremental xyz, worth $xx in profit over the course of a year
 - BUTTONS FOR RESET, SHOW OPTIMAL. This solution drives xyz cards from a, b and c (conditional: but the budget is overspent by x)
-<!--
 $$
-Approved Credit Cards = 80 * ln(Search Spend) + 20 * ln(Social Spend) + 45 * ln(DisplaySpend) + 130
+Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130
 $$
--->
-
-**Approved Credit Cards** = 80 * ln(<b style='color:#4D77A5;'>Search Spend</b>) + 20 * ln(<b style='color:#F28E2C'>Banner Spend</b>) + 45 * ln(<b style='color:#E15759'>Social Spend</b>) + 130
-
-<p id="formula"></p>
-
+<!--**Approved Credit Cards** = 80 * ln(<b style='color:#4D77A5;'>Search Spend</b>) + 20 * ln(<b style='color:#F28E2C'>Banner Spend</b>) + 45 * ln(<b style='color:#E15759'>Social Spend</b>) + 130-->
+<!--<p id="formula"></p>-->
 ```{ojs}
 //| panel: sidebar
 html`<b style="font-size:1.2em;">Monthly Ad Spend ($USD)</b><br>
 
 <i style="color:#585858; font-style:italic;">Use the sliders to allocate monthly spending by channel</i>
-<hr class="dotted"><p></p>
+<p></p>
 `
 viewof Spend_search = Inputs.range(
   [400, 25200], 
@@ -148,7 +144,7 @@ hr.dotted {
 }
 
 html`
-<hr class="dotted"><p>&nbsp;</p>
+<p>&nbsp;</p>
 `
 Inputs.button([
   ["Reset All", () => {set(viewof Spend_search, 12000), 
@@ -159,29 +155,25 @@ Inputs.button([
                   set(viewof Spend_display, 11200)}]                
                   ])
                   
-document.getElementById("formula").innerHTML = "<b>Approved Credit Cards</b> = 80 * ln(<b style='color:#4D77A5;'>" + Number(Spend_search.toFixed(0)) + "</b>) + 45 * ln(<b style='color:#F28E2C'>" + (Number(Spend_display.toFixed(0))) + "</b>) + 20 * ln(<b style='color:#E15759'>" + (Number(Spend_social.toFixed(0)))+"</b>) + 130 = " + Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130))
+//document.getElementById("formula").innerHTML = "<b>Approved Credit Cards</b> = 80 * ln(<b style='color:#4D77A5;'>" + Number(Spend_search.toFixed(0)) + "</b>) + 45 * ln(<b style='color:#F28E2C'>" + (Number(Spend_display.toFixed(0))) + "</b>) + 20 * ln(<b style='color:#E15759'>" + (Number(Spend_social.toFixed(0)))+"</b>) + 130 = " + Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130))
 
 document.getElementById("spend").innerHTML = "Total spend: <b>$" + (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))+" USD</b>"
 
 document.getElementById("budget").innerHTML = "Remaining budget: <b>$" + (36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))))+" USD</b>"
-
-html`
-<p>&nbsp;</p>
-`
 function set(input, value) {
   input.value = value;
   input.dispatchEvent(new Event("input", {bubbles: true}));
 }
 ```
-
 ```{ojs}
 //| panel: fill
 
 html`
-<b>Media Efficiency by Channel</b>
+<b style="font-size:0.7em">Media Efficiency by Channel</b>
 `
 Plot.plot({
-  marginRight: 150,
+  marginRight: 155,
+  height: 330,
   marks: [
     Plot.line(data, 
       { x: "Spend", y: "Additional Incremental Approved Credit Cards", stroke: "channel" }
@@ -198,12 +190,17 @@ Plot.plot({
       fill: "white"})
   ]
 })
-```
 
+html`
+<p></p>
+<p id="conclusion" style="font-size:0.5em;"></p>`
+
+document.getElementById("conclusion").innerHTML = "Our model predicts that this spend will generate <b>"+ Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130)) + "</b> approved credit cards per month, which is an uplift of <b>"+(Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130)) - 1492) +"</b> vs the default budget allocation."
+
+```
 ```{ojs}
 data = FileAttachment("palmer-penguins.csv").csv({ typed: true })
 ```
-
 ```{ojs}
 filtered = data.filter(function(penguin) {
   return Spend_social == penguin.Spend && penguin.channel.includes("Social Media") ||

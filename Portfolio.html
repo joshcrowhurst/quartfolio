@@ -425,6 +425,7 @@
 - Timelien quality and "a new challenge in your organization?"
 - MAYBE just do mmm, incrementality, and wine
 - Make dots on MMM into diamonds
+- MMM numbers in base data do not correspond to the graph
 -->
 <div class="footer">
 <p><a href="mailto:josh.crowhurst@gmail.com"><strong>Contact Me</strong></a></p>
@@ -463,25 +464,19 @@
 <section id="placing-the-right-bets" class="slide level2">
 <h2>Placing the Right Bets</h2>
 <!-- Slide 4: Your solution. How did you solve the problem in the prior slide? Include screenshots of charts, reports, or architectural diagrams of what you built. -->
-<p>Test - We ran a model that suggested we were under-invested in paid search - We tested the assumption with a matched market test (explain) - We found incremental xyz, worth $xx in profit over the course of a year - BUTTONS FOR RESET, SHOW OPTIMAL. This solution drives xyz cards from a, b and c (conditional: but the budget is overspent by x) <!--
-
-
-$$
-Approved Credit Cards = 80 * ln(Search Spend) + 20 * ln(Social Spend) + 45 * ln(DisplaySpend) + 130
-$$
-
-
---></p>
-<p><strong>Approved Credit Cards</strong> = 80 * ln(<b style="color:#4D77A5;">Search Spend</b>) + 20 * ln(<b style="color:#F28E2C">Banner Spend</b>) + 45 * ln(<b style="color:#E15759">Social Spend</b>) + 130</p>
-<p id="formula">
-</p>
+<p>Test - We ran a model that suggested we were under-invested in paid search - We tested the assumption with a matched market test (explain) - We found incremental xyz, worth $xx in profit over the course of a year - BUTTONS FOR RESET, SHOW OPTIMAL. This solution drives xyz cards from a, b and c (conditional: but the budget is overspent by x)</p>
+<p><span class="math display">\[
+Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130
+\]</span></p>
+<!--**Approved Credit Cards** = 80 * ln(<b style='color:#4D77A5;'>Search Spend</b>) + 20 * ln(<b style='color:#F28E2C'>Banner Spend</b>) + 45 * ln(<b style='color:#E15759'>Social Spend</b>) + 130-->
+<!--<p id="formula"></p>-->
 <div class="layout-sidebar layout-sidebar-left">
 <div class="cell panel-sidebar">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="98" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 97;"><span id="cb1-98"><a href="#cb1-98"></a><span class="fu">html</span><span class="vs">`&lt;b style="font-size:1.2em;"&gt;Monthly Ad Spend ($USD)&lt;/b&gt;&lt;br&gt;</span></span>
-<span id="cb1-99"><a href="#cb1-99"></a></span>
-<span id="cb1-100"><a href="#cb1-100"></a><span class="vs">&lt;i style="color:#585858; font-style:italic;"&gt;Use the sliders to allocate monthly spending by channel&lt;/i&gt;</span></span>
-<span id="cb1-101"><a href="#cb1-101"></a><span class="vs">&lt;hr class="dotted"&gt;&lt;p&gt;&lt;/p&gt;</span></span>
-<span id="cb1-102"><a href="#cb1-102"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="94" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 93;"><span id="cb1-94"><a href="#cb1-94"></a><span class="fu">html</span><span class="vs">`&lt;b style="font-size:1.2em;"&gt;Monthly Ad Spend ($USD)&lt;/b&gt;&lt;br&gt;</span></span>
+<span id="cb1-95"><a href="#cb1-95"></a></span>
+<span id="cb1-96"><a href="#cb1-96"></a><span class="vs">&lt;i style="color:#585858; font-style:italic;"&gt;Use the sliders to allocate monthly spending by channel&lt;/i&gt;</span></span>
+<span id="cb1-97"><a href="#cb1-97"></a><span class="vs">&lt;p&gt;&lt;/p&gt;</span></span>
+<span id="cb1-98"><a href="#cb1-98"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="expression">
@@ -489,43 +484,43 @@ $$
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="103" data-source-offset="-200"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 102;"><span id="cb2-103"><a href="#cb2-103"></a>viewof Spend_search <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="99" data-source-offset="-181"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 98;"><span id="cb2-99"><a href="#cb2-99"></a>viewof Spend_search <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-100"><a href="#cb2-100"></a>  [<span class="dv">400</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
+<span id="cb2-101"><a href="#cb2-101"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Google Search Spend"</span>}</span>
+<span id="cb2-102"><a href="#cb2-102"></a>)</span>
+<span id="cb2-103"><a href="#cb2-103"></a>viewof Spend_display <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
 <span id="cb2-104"><a href="#cb2-104"></a>  [<span class="dv">400</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
-<span id="cb2-105"><a href="#cb2-105"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Google Search Spend"</span>}</span>
+<span id="cb2-105"><a href="#cb2-105"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Online Banner Spend"</span>}</span>
 <span id="cb2-106"><a href="#cb2-106"></a>)</span>
-<span id="cb2-107"><a href="#cb2-107"></a>viewof Spend_display <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
+<span id="cb2-107"><a href="#cb2-107"></a>viewof Spend_social <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
 <span id="cb2-108"><a href="#cb2-108"></a>  [<span class="dv">400</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
-<span id="cb2-109"><a href="#cb2-109"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Online Banner Spend"</span>}</span>
+<span id="cb2-109"><a href="#cb2-109"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Social Media Spend"</span>}</span>
 <span id="cb2-110"><a href="#cb2-110"></a>)</span>
-<span id="cb2-111"><a href="#cb2-111"></a>viewof Spend_social <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb2-112"><a href="#cb2-112"></a>  [<span class="dv">400</span><span class="op">,</span> <span class="dv">25200</span>]<span class="op">,</span> </span>
-<span id="cb2-113"><a href="#cb2-113"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">12000</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Social Media Spend"</span>}</span>
-<span id="cb2-114"><a href="#cb2-114"></a>)</span>
-<span id="cb2-115"><a href="#cb2-115"></a><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb2-116"><a href="#cb2-116"></a><span class="vs">&lt;p&gt;&lt;/p&gt;</span></span>
-<span id="cb2-117"><a href="#cb2-117"></a><span class="vs">&lt;p id="spend" style="font-size:1em;"&gt;&lt;/p&gt;</span></span>
-<span id="cb2-118"><a href="#cb2-118"></a><span class="vs">&lt;p id="budget" style="font-size:1em;"&gt;&lt;/p&gt;</span></span>
-<span id="cb2-119"><a href="#cb2-119"></a><span class="vs">&lt;!-- &lt;p id="prediction" style="font-size:1em;"&gt;Predicted approved credit cards: #&lt;/p&gt; --&gt;</span></span>
-<span id="cb2-120"><a href="#cb2-120"></a></span>
-<span id="cb2-121"><a href="#cb2-121"></a><span class="vs">&lt;style&gt;</span></span>
-<span id="cb2-122"><a href="#cb2-122"></a><span class="vs">.oi-ec050e {</span></span>
-<span id="cb2-123"><a href="#cb2-123"></a><span class="vs">      --label-width: 240px;</span></span>
-<span id="cb2-124"><a href="#cb2-124"></a><span class="vs">    }</span></span>
-<span id="cb2-125"><a href="#cb2-125"></a><span class="vs">.observablehq--string {</span></span>
-<span id="cb2-126"><a href="#cb2-126"></a><span class="vs">  display: none;</span></span>
-<span id="cb2-127"><a href="#cb2-127"></a><span class="vs">}</span></span>
-<span id="cb2-128"><a href="#cb2-128"></a><span class="vs">.outputs {</span></span>
-<span id="cb2-129"><a href="#cb2-129"></a><span class="vs">  font-size: 0.5em;</span></span>
+<span id="cb2-111"><a href="#cb2-111"></a><span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb2-112"><a href="#cb2-112"></a><span class="vs">&lt;p&gt;&lt;/p&gt;</span></span>
+<span id="cb2-113"><a href="#cb2-113"></a><span class="vs">&lt;p id="spend" style="font-size:1em;"&gt;&lt;/p&gt;</span></span>
+<span id="cb2-114"><a href="#cb2-114"></a><span class="vs">&lt;p id="budget" style="font-size:1em;"&gt;&lt;/p&gt;</span></span>
+<span id="cb2-115"><a href="#cb2-115"></a><span class="vs">&lt;!-- &lt;p id="prediction" style="font-size:1em;"&gt;Predicted approved credit cards: #&lt;/p&gt; --&gt;</span></span>
+<span id="cb2-116"><a href="#cb2-116"></a></span>
+<span id="cb2-117"><a href="#cb2-117"></a><span class="vs">&lt;style&gt;</span></span>
+<span id="cb2-118"><a href="#cb2-118"></a><span class="vs">.oi-ec050e {</span></span>
+<span id="cb2-119"><a href="#cb2-119"></a><span class="vs">      --label-width: 240px;</span></span>
+<span id="cb2-120"><a href="#cb2-120"></a><span class="vs">    }</span></span>
+<span id="cb2-121"><a href="#cb2-121"></a><span class="vs">.observablehq--string {</span></span>
+<span id="cb2-122"><a href="#cb2-122"></a><span class="vs">  display: none;</span></span>
+<span id="cb2-123"><a href="#cb2-123"></a><span class="vs">}</span></span>
+<span id="cb2-124"><a href="#cb2-124"></a><span class="vs">.outputs {</span></span>
+<span id="cb2-125"><a href="#cb2-125"></a><span class="vs">  font-size: 0.5em;</span></span>
+<span id="cb2-126"><a href="#cb2-126"></a><span class="vs">}</span></span>
+<span id="cb2-127"><a href="#cb2-127"></a><span class="vs">button.btn {</span></span>
+<span id="cb2-128"><a href="#cb2-128"></a><span class="vs">  margin-left: 5px;</span></span>
+<span id="cb2-129"><a href="#cb2-129"></a><span class="vs">  margin-right: 5px;</span></span>
 <span id="cb2-130"><a href="#cb2-130"></a><span class="vs">}</span></span>
-<span id="cb2-131"><a href="#cb2-131"></a><span class="vs">button.btn {</span></span>
-<span id="cb2-132"><a href="#cb2-132"></a><span class="vs">  margin-left: 5px;</span></span>
-<span id="cb2-133"><a href="#cb2-133"></a><span class="vs">  margin-right: 5px;</span></span>
-<span id="cb2-134"><a href="#cb2-134"></a><span class="vs">}</span></span>
-<span id="cb2-135"><a href="#cb2-135"></a><span class="vs">hr.dotted {</span></span>
-<span id="cb2-136"><a href="#cb2-136"></a><span class="vs">  border-top: 0.75px dotted #585858;</span></span>
-<span id="cb2-137"><a href="#cb2-137"></a><span class="vs">}</span></span>
-<span id="cb2-138"><a href="#cb2-138"></a><span class="vs">&lt;/style&gt;</span></span>
-<span id="cb2-139"><a href="#cb2-139"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-131"><a href="#cb2-131"></a><span class="vs">hr.dotted {</span></span>
+<span id="cb2-132"><a href="#cb2-132"></a><span class="vs">  border-top: 0.75px dotted #585858;</span></span>
+<span id="cb2-133"><a href="#cb2-133"></a><span class="vs">}</span></span>
+<span id="cb2-134"><a href="#cb2-134"></a><span class="vs">&lt;/style&gt;</span></span>
+<span id="cb2-135"><a href="#cb2-135"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-2" data-nodetype="declaration">
@@ -554,15 +549,15 @@ $$
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="140" data-source-offset="-978"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 139;"><span id="cb3-140"><a href="#cb3-140"></a>{</span>
-<span id="cb3-141"><a href="#cb3-141"></a>  <span class="cf">if</span>((<span class="dv">36000</span> <span class="op">-</span> (<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)))) <span class="op">&lt;</span> <span class="dv">0</span>){</span>
-<span id="cb3-142"><a href="#cb3-142"></a>    <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"budget"</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span><span class="op">=</span> <span class="st">"red"</span><span class="op">;</span></span>
-<span id="cb3-143"><a href="#cb3-143"></a>    <span class="cf">return</span> <span class="st">"Over budget"</span></span>
-<span id="cb3-144"><a href="#cb3-144"></a>  }<span class="cf">else</span>{</span>
-<span id="cb3-145"><a href="#cb3-145"></a>    <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"budget"</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span><span class="op">=</span> <span class="st">"black"</span><span class="op">;</span></span>
-<span id="cb3-146"><a href="#cb3-146"></a>    <span class="cf">return</span> <span class="st">"Within budget"</span></span>
-<span id="cb3-147"><a href="#cb3-147"></a>  }</span>
-<span id="cb3-148"><a href="#cb3-148"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="136" data-source-offset="-959"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 135;"><span id="cb3-136"><a href="#cb3-136"></a>{</span>
+<span id="cb3-137"><a href="#cb3-137"></a>  <span class="cf">if</span>((<span class="dv">36000</span> <span class="op">-</span> (<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)))) <span class="op">&lt;</span> <span class="dv">0</span>){</span>
+<span id="cb3-138"><a href="#cb3-138"></a>    <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"budget"</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span><span class="op">=</span> <span class="st">"red"</span><span class="op">;</span></span>
+<span id="cb3-139"><a href="#cb3-139"></a>    <span class="cf">return</span> <span class="st">"Over budget"</span></span>
+<span id="cb3-140"><a href="#cb3-140"></a>  }<span class="cf">else</span>{</span>
+<span id="cb3-141"><a href="#cb3-141"></a>    <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"budget"</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span><span class="op">=</span> <span class="st">"black"</span><span class="op">;</span></span>
+<span id="cb3-142"><a href="#cb3-142"></a>    <span class="cf">return</span> <span class="st">"Within budget"</span></span>
+<span id="cb3-143"><a href="#cb3-143"></a>  }</span>
+<span id="cb3-144"><a href="#cb3-144"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-6" data-nodetype="expression">
@@ -570,9 +565,9 @@ $$
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="150" data-source-offset="-1290"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 149;"><span id="cb4-150"><a href="#cb4-150"></a><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb4-151"><a href="#cb4-151"></a><span class="vs">&lt;hr class="dotted"&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;</span></span>
-<span id="cb4-152"><a href="#cb4-152"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="146" data-source-offset="-1271"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 145;"><span id="cb4-146"><a href="#cb4-146"></a><span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb4-147"><a href="#cb4-147"></a><span class="vs">&lt;p&gt;&amp;nbsp;&lt;/p&gt;</span></span>
+<span id="cb4-148"><a href="#cb4-148"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-7" data-nodetype="expression">
@@ -580,14 +575,14 @@ $$
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="153" data-source-offset="-1331"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 152;"><span id="cb5-153"><a href="#cb5-153"></a>Inputs<span class="op">.</span><span class="fu">button</span>([</span>
-<span id="cb5-154"><a href="#cb5-154"></a>  [<span class="st">"Reset All"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {<span class="fu">set</span>(viewof Spend_search<span class="op">,</span> <span class="dv">12000</span>)<span class="op">,</span> </span>
-<span id="cb5-155"><a href="#cb5-155"></a>                  <span class="fu">set</span>(viewof Spend_social<span class="op">,</span> <span class="dv">12000</span>)<span class="op">,</span></span>
-<span id="cb5-156"><a href="#cb5-156"></a>                  <span class="fu">set</span>(viewof Spend_display<span class="op">,</span> <span class="dv">12000</span>)}]<span class="op">,</span></span>
-<span id="cb5-157"><a href="#cb5-157"></a>  [<span class="st">"Optimal Mix"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {<span class="fu">set</span>(viewof Spend_search<span class="op">,</span> <span class="dv">20000</span>)<span class="op">,</span> </span>
-<span id="cb5-158"><a href="#cb5-158"></a>                  <span class="fu">set</span>(viewof Spend_social<span class="op">,</span> <span class="dv">4800</span>)<span class="op">,</span></span>
-<span id="cb5-159"><a href="#cb5-159"></a>                  <span class="fu">set</span>(viewof Spend_display<span class="op">,</span> <span class="dv">11200</span>)}]                </span>
-<span id="cb5-160"><a href="#cb5-160"></a>                  ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="149" data-source-offset="-1293"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 148;"><span id="cb5-149"><a href="#cb5-149"></a>Inputs<span class="op">.</span><span class="fu">button</span>([</span>
+<span id="cb5-150"><a href="#cb5-150"></a>  [<span class="st">"Reset All"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {<span class="fu">set</span>(viewof Spend_search<span class="op">,</span> <span class="dv">12000</span>)<span class="op">,</span> </span>
+<span id="cb5-151"><a href="#cb5-151"></a>                  <span class="fu">set</span>(viewof Spend_social<span class="op">,</span> <span class="dv">12000</span>)<span class="op">,</span></span>
+<span id="cb5-152"><a href="#cb5-152"></a>                  <span class="fu">set</span>(viewof Spend_display<span class="op">,</span> <span class="dv">12000</span>)}]<span class="op">,</span></span>
+<span id="cb5-153"><a href="#cb5-153"></a>  [<span class="st">"Optimal Mix"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {<span class="fu">set</span>(viewof Spend_search<span class="op">,</span> <span class="dv">20000</span>)<span class="op">,</span> </span>
+<span id="cb5-154"><a href="#cb5-154"></a>                  <span class="fu">set</span>(viewof Spend_social<span class="op">,</span> <span class="dv">4800</span>)<span class="op">,</span></span>
+<span id="cb5-155"><a href="#cb5-155"></a>                  <span class="fu">set</span>(viewof Spend_display<span class="op">,</span> <span class="dv">11200</span>)}]                </span>
+<span id="cb5-156"><a href="#cb5-156"></a>                  ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-8" data-nodetype="expression">
@@ -595,7 +590,7 @@ $$
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="162" data-source-offset="-1727"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 161;"><span id="cb6-162"><a href="#cb6-162"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"formula"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"&lt;b&gt;Approved Credit Cards&lt;/b&gt; = 80 * ln(&lt;b style='color:#4D77A5;'&gt;"</span> <span class="op">+</span> <span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="st">"&lt;/b&gt;) + 45 * ln(&lt;b style='color:#F28E2C'&gt;"</span> <span class="op">+</span> (<span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))) <span class="op">+</span> <span class="st">"&lt;/b&gt;) + 20 * ln(&lt;b style='color:#E15759'&gt;"</span> <span class="op">+</span> (<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)))<span class="op">+</span><span class="st">"&lt;/b&gt;) + 130 = "</span> <span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>((<span class="dv">80</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))) <span class="op">+</span> <span class="dv">45</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)))<span class="op">+</span><span class="dv">20</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))) <span class="op">+</span> <span class="dv">130</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="160" data-source-offset="-2189"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 159;"><span id="cb6-160"><a href="#cb6-160"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"spend"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"Total spend: &lt;b&gt;$"</span> <span class="op">+</span> (<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)))<span class="op">+</span><span class="st">" USD&lt;/b&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-9" data-nodetype="expression">
@@ -603,7 +598,7 @@ $$
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="164" data-source-offset="-2225"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 163;"><span id="cb7-164"><a href="#cb7-164"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"spend"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"Total spend: &lt;b&gt;$"</span> <span class="op">+</span> (<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)))<span class="op">+</span><span class="st">" USD&lt;/b&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="162" data-source-offset="-2371"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 161;"><span id="cb7-162"><a href="#cb7-162"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"budget"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"Remaining budget: &lt;b&gt;$"</span> <span class="op">+</span> (<span class="dv">36000</span> <span class="op">-</span> (<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))))<span class="op">+</span><span class="st">" USD&lt;/b&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-10" data-nodetype="expression">
@@ -611,40 +606,22 @@ $$
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="166" data-source-offset="-2407"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 165;"><span id="cb8-166"><a href="#cb8-166"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"budget"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"Remaining budget: &lt;b&gt;$"</span> <span class="op">+</span> (<span class="dv">36000</span> <span class="op">-</span> (<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)) <span class="op">+</span> <span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))))<span class="op">+</span><span class="st">" USD&lt;/b&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="163" data-source-offset="-2568"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 162;"><span id="cb8-163"><a href="#cb8-163"></a><span class="kw">function</span> <span class="fu">set</span>(input<span class="op">,</span> value) {</span>
+<span id="cb8-164"><a href="#cb8-164"></a>  input<span class="op">.</span><span class="at">value</span> <span class="op">=</span> value<span class="op">;</span></span>
+<span id="cb8-165"><a href="#cb8-165"></a>  input<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">Event</span>(<span class="st">"input"</span><span class="op">,</span> {<span class="dt">bubbles</span><span class="op">:</span> <span class="kw">true</span>}))<span class="op">;</span></span>
+<span id="cb8-166"><a href="#cb8-166"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-11" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="168" data-source-offset="-2605"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 167;"><span id="cb9-168"><a href="#cb9-168"></a><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb9-169"><a href="#cb9-169"></a><span class="vs">&lt;p&gt;&amp;nbsp;&lt;/p&gt;</span></span>
-<span id="cb9-170"><a href="#cb9-170"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-12" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="171" data-source-offset="-2627"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 170;"><span id="cb10-171"><a href="#cb10-171"></a><span class="kw">function</span> <span class="fu">set</span>(input<span class="op">,</span> value) {</span>
-<span id="cb10-172"><a href="#cb10-172"></a>  input<span class="op">.</span><span class="at">value</span> <span class="op">=</span> value<span class="op">;</span></span>
-<span id="cb10-173"><a href="#cb10-173"></a>  input<span class="op">.</span><span class="fu">dispatchEvent</span>(<span class="kw">new</span> <span class="bu">Event</span>(<span class="st">"input"</span><span class="op">,</span> {<span class="dt">bubbles</span><span class="op">:</span> <span class="kw">true</span>}))<span class="op">;</span></span>
-<span id="cb10-174"><a href="#cb10-174"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-13" data-nodetype="declaration">
+<div id="ojs-cell-1-11" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 </div>
 <div class="cell panel-fill">
-<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="180" data-source-offset="-1"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 179;"><span id="cb11-180"><a href="#cb11-180"></a><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb11-181"><a href="#cb11-181"></a><span class="vs">&lt;b&gt;Media Efficiency by Channel&lt;/b&gt;</span></span>
-<span id="cb11-182"><a href="#cb11-182"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="171" data-source-offset="-1"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 170;"><span id="cb9-171"><a href="#cb9-171"></a><span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb9-172"><a href="#cb9-172"></a><span class="vs">&lt;b style="font-size:0.7em"&gt;Media Efficiency by Channel&lt;/b&gt;</span></span>
+<span id="cb9-173"><a href="#cb9-173"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="expression">
@@ -652,24 +629,25 @@ $$
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="183" data-source-offset="-44"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 182;"><span id="cb12-183"><a href="#cb12-183"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb12-184"><a href="#cb12-184"></a>  <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">150</span><span class="op">,</span></span>
-<span id="cb12-185"><a href="#cb12-185"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb12-186"><a href="#cb12-186"></a>    Plot<span class="op">.</span><span class="fu">line</span>(data<span class="op">,</span> </span>
-<span id="cb12-187"><a href="#cb12-187"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span> }</span>
-<span id="cb12-188"><a href="#cb12-188"></a>    )<span class="op">,</span></span>
-<span id="cb12-189"><a href="#cb12-189"></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">selectLast</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">3</span>}))<span class="op">,</span></span>
-<span id="cb12-190"><a href="#cb12-190"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span>{</span>
-<span id="cb12-191"><a href="#cb12-191"></a>      <span class="dt">r</span><span class="op">:</span> {</span>
-<span id="cb12-192"><a href="#cb12-192"></a>        <span class="dt">range</span><span class="op">:</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">11</span>]</span>
-<span id="cb12-193"><a href="#cb12-193"></a>      }<span class="op">,</span></span>
-<span id="cb12-194"><a href="#cb12-194"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> </span>
-<span id="cb12-195"><a href="#cb12-195"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> </span>
-<span id="cb12-196"><a href="#cb12-196"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">7</span><span class="op">,</span></span>
-<span id="cb12-197"><a href="#cb12-197"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> </span>
-<span id="cb12-198"><a href="#cb12-198"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"white"</span>})</span>
-<span id="cb12-199"><a href="#cb12-199"></a>  ]</span>
-<span id="cb12-200"><a href="#cb12-200"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="174" data-source-offset="-68"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 173;"><span id="cb10-174"><a href="#cb10-174"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb10-175"><a href="#cb10-175"></a>  <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">155</span><span class="op">,</span></span>
+<span id="cb10-176"><a href="#cb10-176"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">330</span><span class="op">,</span></span>
+<span id="cb10-177"><a href="#cb10-177"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb10-178"><a href="#cb10-178"></a>    Plot<span class="op">.</span><span class="fu">line</span>(data<span class="op">,</span> </span>
+<span id="cb10-179"><a href="#cb10-179"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span> }</span>
+<span id="cb10-180"><a href="#cb10-180"></a>    )<span class="op">,</span></span>
+<span id="cb10-181"><a href="#cb10-181"></a>    Plot<span class="op">.</span><span class="fu">text</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">selectLast</span>({<span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> <span class="dt">z</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">3</span>}))<span class="op">,</span></span>
+<span id="cb10-182"><a href="#cb10-182"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(filtered<span class="op">,</span>{</span>
+<span id="cb10-183"><a href="#cb10-183"></a>      <span class="dt">r</span><span class="op">:</span> {</span>
+<span id="cb10-184"><a href="#cb10-184"></a>        <span class="dt">range</span><span class="op">:</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">11</span>]</span>
+<span id="cb10-185"><a href="#cb10-185"></a>      }<span class="op">,</span></span>
+<span id="cb10-186"><a href="#cb10-186"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"Spend"</span><span class="op">,</span> </span>
+<span id="cb10-187"><a href="#cb10-187"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"Additional Incremental Approved Credit Cards"</span><span class="op">,</span> </span>
+<span id="cb10-188"><a href="#cb10-188"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">7</span><span class="op">,</span></span>
+<span id="cb10-189"><a href="#cb10-189"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"channel"</span><span class="op">,</span> </span>
+<span id="cb10-190"><a href="#cb10-190"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"white"</span>})</span>
+<span id="cb10-191"><a href="#cb10-191"></a>  ]</span>
+<span id="cb10-192"><a href="#cb10-192"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-2" data-nodetype="expression">
@@ -677,10 +655,28 @@ $$
 </div>
 </div>
 </div>
+<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="194" data-source-offset="-620"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 193;"><span id="cb11-194"><a href="#cb11-194"></a><span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb11-195"><a href="#cb11-195"></a><span class="vs">&lt;p&gt;&lt;/p&gt;</span></span>
+<span id="cb11-196"><a href="#cb11-196"></a><span class="vs">&lt;p id="conclusion" style="font-size:0.5em;"&gt;&lt;/p&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="198" data-source-offset="-685"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 197;"><span id="cb12-198"><a href="#cb12-198"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"conclusion"</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"Our model predicts that this spend will generate &lt;b&gt;"</span><span class="op">+</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>((<span class="dv">80</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))) <span class="op">+</span> <span class="dv">45</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)))<span class="op">+</span><span class="dv">20</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))) <span class="op">+</span> <span class="dv">130</span>)) <span class="op">+</span> <span class="st">"&lt;/b&gt; approved credit cards per month, which is an uplift of &lt;b&gt;"</span><span class="op">+</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>((<span class="dv">80</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Number</span>(Spend_search<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))) <span class="op">+</span> <span class="dv">45</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Number</span>(Spend_display<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>)))<span class="op">+</span><span class="dv">20</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">Number</span>(Spend_social<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">0</span>))) <span class="op">+</span> <span class="dv">130</span>)) <span class="op">-</span> <span class="dv">1492</span>) <span class="op">+</span><span class="st">"&lt;/b&gt; vs the default budget allocation."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb13" data-startfrom="203" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 202;"><span id="cb13-203"><a href="#cb13-203"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"palmer-penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb13" data-startfrom="201" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 200;"><span id="cb13-201"><a href="#cb13-201"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"palmer-penguins.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="declaration">
 
@@ -688,11 +684,11 @@ $$
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb14" data-startfrom="207" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 206;"><span id="cb14-207"><a href="#cb14-207"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
-<span id="cb14-208"><a href="#cb14-208"></a>  <span class="cf">return</span> Spend_social <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Social Media"</span>) <span class="op">||</span></span>
-<span id="cb14-209"><a href="#cb14-209"></a>    Spend_display <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Online Banner &amp; Programmatic"</span>) <span class="op">||</span></span>
-<span id="cb14-210"><a href="#cb14-210"></a>      Spend_search <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Google Search"</span>)<span class="op">;</span></span>
-<span id="cb14-211"><a href="#cb14-211"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb14" data-startfrom="204" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 203;"><span id="cb14-204"><a href="#cb14-204"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
+<span id="cb14-205"><a href="#cb14-205"></a>  <span class="cf">return</span> Spend_social <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Social Media"</span>) <span class="op">||</span></span>
+<span id="cb14-206"><a href="#cb14-206"></a>    Spend_display <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Online Banner &amp; Programmatic"</span>) <span class="op">||</span></span>
+<span id="cb14-207"><a href="#cb14-207"></a>      Spend_search <span class="op">==</span> penguin<span class="op">.</span><span class="at">Spend</span> <span class="op">&amp;&amp;</span> penguin<span class="op">.</span><span class="at">channel</span><span class="op">.</span><span class="fu">includes</span>(<span class="st">"Google Search"</span>)<span class="op">;</span></span>
+<span id="cb14-208"><a href="#cb14-208"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="declaration">
 
@@ -1073,7 +1069,7 @@ $$
       });
     </script>
     <script type="ojs-module-contents">
-    {"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"html`<b style=\"font-size:1.2em;\">Monthly Ad Spend ($USD)</b><br>\n\n<i style=\"color:#585858; font-style:italic;\">Use the sliders to allocate monthly spending by channel</i>\n<hr class=\"dotted\"><p></p>\n`\nviewof Spend_search = Inputs.range(\n  [400, 25200], \n  {value: 12000, step: 400, label: \"Google Search Spend\"}\n)\nviewof Spend_display = Inputs.range(\n  [400, 25200], \n  {value: 12000, step: 400, label: \"Online Banner Spend\"}\n)\nviewof Spend_social = Inputs.range(\n  [400, 25200], \n  {value: 12000, step: 400, label: \"Social Media Spend\"}\n)\nhtml`\n<p></p>\n<p id=\"spend\" style=\"font-size:1em;\"></p>\n<p id=\"budget\" style=\"font-size:1em;\"></p>\n<!-- <p id=\"prediction\" style=\"font-size:1em;\">Predicted approved credit cards: #</p> -->\n\n<style>\n.oi-ec050e {\n      --label-width: 240px;\n    }\n.observablehq--string {\n  display: none;\n}\n.outputs {\n  font-size: 0.5em;\n}\nbutton.btn {\n  margin-left: 5px;\n  margin-right: 5px;\n}\nhr.dotted {\n  border-top: 0.75px dotted #585858;\n}\n</style>\n`\n{\n  if((36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))) < 0){\n    document.getElementById(\"budget\").style.color= \"red\";\n    return \"Over budget\"\n  }else{\n    document.getElementById(\"budget\").style.color= \"black\";\n    return \"Within budget\"\n  }\n}\n\nhtml`\n<hr class=\"dotted\"><p>&nbsp;</p>\n`\nInputs.button([\n  [\"Reset All\", () => {set(viewof Spend_search, 12000), \n                  set(viewof Spend_social, 12000),\n                  set(viewof Spend_display, 12000)}],\n  [\"Optimal Mix\", () => {set(viewof Spend_search, 20000), \n                  set(viewof Spend_social, 4800),\n                  set(viewof Spend_display, 11200)}]                \n                  ])\n                  \ndocument.getElementById(\"formula\").innerHTML = \"<b>Approved Credit Cards</b> = 80 * ln(<b style='color:#4D77A5;'>\" + Number(Spend_search.toFixed(0)) + \"</b>) + 45 * ln(<b style='color:#F28E2C'>\" + (Number(Spend_display.toFixed(0))) + \"</b>) + 20 * ln(<b style='color:#E15759'>\" + (Number(Spend_social.toFixed(0)))+\"</b>) + 130 = \" + Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130))\n\ndocument.getElementById(\"spend\").innerHTML = \"Total spend: <b>$\" + (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))+\" USD</b>\"\n\ndocument.getElementById(\"budget\").innerHTML = \"Remaining budget: <b>$\" + (36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))))+\" USD</b>\"\n\nhtml`\n<p>&nbsp;</p>\n`\nfunction set(input, value) {\n  input.value = value;\n  input.dispatchEvent(new Event(\"input\", {bubbles: true}));\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"\nhtml`\n<b>Media Efficiency by Channel</b>\n`\nPlot.plot({\n  marginRight: 150,\n  marks: [\n    Plot.line(data, \n      { x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", stroke: \"channel\" }\n    ),\n    Plot.text(data, Plot.selectLast({x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", z: \"channel\", text: \"channel\", textAnchor: \"start\", dx: 3})),\n    Plot.dot(filtered,{\n      r: {\n        range: [10, 11]\n      },\n      x: \"Spend\", \n      y: \"Additional Incremental Approved Credit Cards\", \n      r: 7,\n      stroke: \"channel\", \n      fill: \"white\"})\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"data = FileAttachment(\"palmer-penguins.csv\").csv({ typed: true })\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"filtered = data.filter(function(penguin) {\n  return Spend_social == penguin.Spend && penguin.channel.includes(\"Social Media\") ||\n    Spend_display == penguin.Spend && penguin.channel.includes(\"Online Banner & Programmatic\") ||\n      Spend_search == penguin.Spend && penguin.channel.includes(\"Google Search\");\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_search')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_display')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_social')"}]}
+    {"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"html`<b style=\"font-size:1.2em;\">Monthly Ad Spend ($USD)</b><br>\n\n<i style=\"color:#585858; font-style:italic;\">Use the sliders to allocate monthly spending by channel</i>\n<p></p>\n`\nviewof Spend_search = Inputs.range(\n  [400, 25200], \n  {value: 12000, step: 400, label: \"Google Search Spend\"}\n)\nviewof Spend_display = Inputs.range(\n  [400, 25200], \n  {value: 12000, step: 400, label: \"Online Banner Spend\"}\n)\nviewof Spend_social = Inputs.range(\n  [400, 25200], \n  {value: 12000, step: 400, label: \"Social Media Spend\"}\n)\nhtml`\n<p></p>\n<p id=\"spend\" style=\"font-size:1em;\"></p>\n<p id=\"budget\" style=\"font-size:1em;\"></p>\n<!-- <p id=\"prediction\" style=\"font-size:1em;\">Predicted approved credit cards: #</p> -->\n\n<style>\n.oi-ec050e {\n      --label-width: 240px;\n    }\n.observablehq--string {\n  display: none;\n}\n.outputs {\n  font-size: 0.5em;\n}\nbutton.btn {\n  margin-left: 5px;\n  margin-right: 5px;\n}\nhr.dotted {\n  border-top: 0.75px dotted #585858;\n}\n</style>\n`\n{\n  if((36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))) < 0){\n    document.getElementById(\"budget\").style.color= \"red\";\n    return \"Over budget\"\n  }else{\n    document.getElementById(\"budget\").style.color= \"black\";\n    return \"Within budget\"\n  }\n}\n\nhtml`\n<p>&nbsp;</p>\n`\nInputs.button([\n  [\"Reset All\", () => {set(viewof Spend_search, 12000), \n                  set(viewof Spend_social, 12000),\n                  set(viewof Spend_display, 12000)}],\n  [\"Optimal Mix\", () => {set(viewof Spend_search, 20000), \n                  set(viewof Spend_social, 4800),\n                  set(viewof Spend_display, 11200)}]                \n                  ])\n                  \n//document.getElementById(\"formula\").innerHTML = \"<b>Approved Credit Cards</b> = 80 * ln(<b style='color:#4D77A5;'>\" + Number(Spend_search.toFixed(0)) + \"</b>) + 45 * ln(<b style='color:#F28E2C'>\" + (Number(Spend_display.toFixed(0))) + \"</b>) + 20 * ln(<b style='color:#E15759'>\" + (Number(Spend_social.toFixed(0)))+\"</b>) + 130 = \" + Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130))\n\ndocument.getElementById(\"spend\").innerHTML = \"Total spend: <b>$\" + (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))+\" USD</b>\"\n\ndocument.getElementById(\"budget\").innerHTML = \"Remaining budget: <b>$\" + (36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))))+\" USD</b>\"\nfunction set(input, value) {\n  input.value = value;\n  input.dispatchEvent(new Event(\"input\", {bubbles: true}));\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"\nhtml`\n<b style=\"font-size:0.7em\">Media Efficiency by Channel</b>\n`\nPlot.plot({\n  marginRight: 155,\n  height: 330,\n  marks: [\n    Plot.line(data, \n      { x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", stroke: \"channel\" }\n    ),\n    Plot.text(data, Plot.selectLast({x: \"Spend\", y: \"Additional Incremental Approved Credit Cards\", z: \"channel\", text: \"channel\", textAnchor: \"start\", dx: 3})),\n    Plot.dot(filtered,{\n      r: {\n        range: [10, 11]\n      },\n      x: \"Spend\", \n      y: \"Additional Incremental Approved Credit Cards\", \n      r: 7,\n      stroke: \"channel\", \n      fill: \"white\"})\n  ]\n})\n\nhtml`\n<p></p>\n<p id=\"conclusion\" style=\"font-size:0.5em;\"></p>`\n\ndocument.getElementById(\"conclusion\").innerHTML = \"Our model predicts that this spend will generate <b>\"+ Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130)) + \"</b> approved credit cards per month, which is an uplift of <b>\"+(Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130)) - 1492) +\"</b> vs the default budget allocation.\"\n\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"data = FileAttachment(\"palmer-penguins.csv\").csv({ typed: true })\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"filtered = data.filter(function(penguin) {\n  return Spend_social == penguin.Spend && penguin.channel.includes(\"Social Media\") ||\n    Spend_display == penguin.Spend && penguin.channel.includes(\"Online Banner & Programmatic\") ||\n      Spend_search == penguin.Spend && penguin.channel.includes(\"Google Search\");\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_search')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_display')"},{"methodName":"interpretQuiet","source":"shinyInput('Spend_social')"}]}
     </script>
     <script type="module">
     window._ojs.paths.runtimeToDoc = "../../..";

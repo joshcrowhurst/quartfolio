@@ -1,6 +1,6 @@
 ---
-title: "Josh Crowhurst: Analytics Portfolio"
-subtitle: "Use arrow keys  &nbsp; ⬅️ ➡️  &nbsp; or swipe to change slide"
+title: "Josh Crowhurst: Analytics Portfolio <style>.past .slide-background-content {background:#43464B;}</style>"
+subtitle: "<b style='color:#4D77A5;'>Insight</b> Communication <b style='color:#4D77A5;'>Implementation</b> Analytics Team Management <br><br><i style='font-style:italic; font-size:0.8em;'>Use arrow keys  &nbsp; ⬅️ ➡️  &nbsp; or swipe to change slide</i>"
 format:
   revealjs: 
     theme: default
@@ -17,45 +17,22 @@ This is a short summary of my background:
 ![](timeline.png){fig-align="center"}
 
 :::
-<!-- To do:
-- Animations?
-- Add the power status etc to top of phone img
-- Put the whole thing through a spellcheck
-- Spoof PBI data
-- Footer color on dark slides
-- Reorder data studio
-- Add link to CV
-- Instructions on arrows to navigate
-- For Tableau, consider having it pop up as a modal to interact. Lunapic is the platform to make transparent with ok quality
-- Tweet @ benn stancil
-- Have the cover slide incl a photo background
-- Media dashboard, other ideas: brief note on what each one demonstrates, link to CV
-- APH guys to review 
-- Add email autoresponse on website
-- Colors on title slide text 
-- Light color footer
-- MMM facebook use blue google use google color
-- Fix[download my CV](http://www.joshcrowhurst.com)
-- Timelien quality and "a new challenge in your organization?"
-- MAYBE just do mmm, incrementality, and wine
-- Make dots on MMM into diamonds
-- MMM numbers in base data do not correspond to the graph
--->
+
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
-# And these are a few projects that I am proud of:
+# And these are a few <b style='color:#4D77A5;'>recent projects</b> that I am proud of: {background="#43464B"}
 
 <style>
-#and-these-are-a-few-projects-that-i-am-proud-of h1 {
-    font-size:1em;
+#and-these-are-a-few-recent-projects-that-i-am-proud-of h1 {
+    font-size:1.3em;
 }
 </style>
 
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
-## Did revenue from the last dollar we spent cover its cost?
+## The Attribution Problem
 <!-- A big problem you worked on. Introduce one of your biggest or most impactful projects from a recent job. What was the problem? -->
 
 https://www.liftlab.com for ideas on how to frame this
@@ -77,16 +54,15 @@ img here
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
 
-## Placing the Right Bets
+## Digital Media Mix Model
 <!-- Slide 4: Your solution. How did you solve the problem in the prior slide? Include screenshots of charts, reports, or architectural diagrams of what you built. -->
-Test
--   We ran a model that suggested we were under-invested in paid search
--   We tested the assumption with a matched market test (explain)
--   We found incremental xyz, worth $xx in profit over the course of a year
-- BUTTONS FOR RESET, SHOW OPTIMAL. This solution drives xyz cards from a, b and c (conditional: but the budget is overspent by x)
-$$
-Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130
-$$
+<b>Solution:</b> build a media mix model to estimate the incremental impact of each ad channel. This led to three useful outcomes: 
+
+- Validated that current levels of spend were delivering positive ROI (we were not over-spending)
+- Quantified the opportunity size for MMM-based spending: up to a 6 digit increase in incremental $USD profit per year
+- Testable hypotheses that we were under-invested in search ads and over-invested in social ads
+
+A simplified version of the model*: $Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130$
 <!--**Approved Credit Cards** = 80 * ln(<b style='color:#4D77A5;'>Search Spend</b>) + 20 * ln(<b style='color:#F28E2C'>Banner Spend</b>) + 45 * ln(<b style='color:#E15759'>Social Spend</b>) + 130-->
 <!--<p id="formula"></p>-->
 ```{ojs}
@@ -212,6 +188,23 @@ filtered = data.filter(function(penguin) {
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
 
+## Testing for Incremental Ad Impact
+<b>The Problem:</b> We decided to test the hypothesis that we were under-invested in paid search advertising. We needed a way to formally test that increased spend would deliver incremental approved credit cards, as the model suggested. 
+ 
+<b>The Solution:</b> run a matched-markets test. This is a type of quasi-experiment, following this process:
+
+- Two geographical markets that historically follow similar performance trends are identified
+- Spending is increased (or, alternatively, can be paused) in only one of the two (the "test market")
+- All else being equal, performance changes in the test market that differ significantly from the control market can be attributed to the change in spend
+
+Our result: 
+
+- xyz amazing things
+
+::: footer
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+:::
+
 ## Logistics Transformation {background-image="containership.png" background-opacity=0.3}
 <!-- Slides 5 and 6: A project that you’re proud of. In the same two-slide format, talk through a problem you’re particularly proud of solving. Instead of a “big” one that you’d typically put on your resume, choose something that demonstrates what type of work you find exciting and motivating -->
 :::: {.columns}
@@ -263,7 +256,6 @@ _Photo by [william william](https://unsplash.com/@william07?utm_source=unsplash&
 ## Logistics Transformation 
 <!-- {background-image="containership.png" background-opacity=0.3}-->
 <!-- Slide 4: Your solution. How did you solve the problem in the prior slide? Include screenshots of charts, reports, or architectural diagrams of what you built. -->
-::: {.panel-tabset}
 
 ## The Solution
 :::: {.columns}
@@ -286,11 +278,6 @@ xx
 :::
 
 ::::
-
-## Detailed Setup
-
-:::
-
 
 <style>
 .reveal section p {
@@ -315,7 +302,12 @@ xx
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
 
-# I also do a lot of personal projects to keep my analytics skills up-to-date. Here are a couple of those: 
+# I also do a lot of <b style='color:#4D77A5;'>personal projects</b> to keep my analytics skills up-to-date. Here are a couple of those: {background="#43464B"}
+<style>
+#i-also-do-a-lot-of-personal-projects-to-keep-my-analytics-skills-up-to-date\.-here-are-a-couple-of-those h1 {
+    font-size:1.3em;
+}
+</style>
 
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)

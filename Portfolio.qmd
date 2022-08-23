@@ -1,6 +1,6 @@
 ---
 title: "Josh Crowhurst: Analytics Portfolio <style>.past .slide-background-content {background:#43464B;}</style>"
-subtitle: "<b style='color:#4D77A5;'>Insight</b> Communication <b style='color:#4D77A5;'>Implementation</b> Analytics Team Management <br><br><i style='font-style:italic; font-size:0.8em;'>Use arrow keys  &nbsp; ⬅️ ➡️  &nbsp; or swipe to change slide</i>"
+subtitle: "<b style='color:#5878A3;'>Insight</b> &nbsp;&nbsp;&nbsp;<b style='color:#E49344'>Communication </b>&nbsp;&nbsp;&nbsp;<b style='color:#D1605E;'>Implementation</b> &nbsp;&nbsp;&nbsp;<b style='color:#A77C9F;'>Analytics Team Management</b> <br><br><i style='font-style:italic; font-size:0.8em;'>Use arrow keys  &nbsp; ⬅️ ➡️  &nbsp; or swipe to change slide</i>"
 format:
   revealjs: 
     theme: default
@@ -10,6 +10,7 @@ format:
     transition-speed: fast
   html:
     link-external-newwindow: true
+    backgroundcolor: "#F9F6F1"
 ---
 ## Hi, I'm Josh 👋 
 ::: {layout="[[-1], [1], [-1]]"}
@@ -21,7 +22,7 @@ This is a short summary of my background:
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
-# And these are a few <b style='color:#4D77A5;'>recent projects</b> that I am proud of: {background="#43464B"}
+# And these are a few recent projects that I am proud of: {background="#43464B"}
 
 <style>
 #and-these-are-a-few-recent-projects-that-i-am-proud-of h1 {
@@ -62,7 +63,7 @@ img here
 - Quantified the opportunity size for MMM-based spending: up to a 6 digit increase in incremental $USD profit per year
 - Testable hypotheses that we were under-invested in search ads and over-invested in social ads
 
-A simplified version of the model*: $Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130$
+**Model:** $Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130$
 <!--**Approved Credit Cards** = 80 * ln(<b style='color:#4D77A5;'>Search Spend</b>) + 20 * ln(<b style='color:#F28E2C'>Banner Spend</b>) + 45 * ln(<b style='color:#E15759'>Social Spend</b>) + 130-->
 <!--<p id="formula"></p>-->
 ```{ojs}
@@ -302,9 +303,9 @@ xx
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
 
-# I also do a lot of <b style='color:#4D77A5;'>personal projects</b> to keep my analytics skills up-to-date. Here are a couple of those: {background="#43464B"}
+# I also do a lot of personal projects to keep my analytics skills up-to-date. Here are a couple examples: {background="#43464B"}
 <style>
-#i-also-do-a-lot-of-personal-projects-to-keep-my-analytics-skills-up-to-date\.-here-are-a-couple-of-those h1 {
+#i-also-do-a-lot-of-personal-projects-to-keep-my-analytics-skills-up-to-date\.-here-are-a-couple-examples h1 {
     font-size:1.3em;
 }
 </style>

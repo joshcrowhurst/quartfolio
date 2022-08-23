@@ -1,6 +1,6 @@
 ---
 title: "Josh Crowhurst: Analytics Portfolio"
-subtitle: "Use arrow keys or swipe to change slide EMOJI??"
+subtitle: "Use arrow keys  &nbsp; ⬅️ ➡️  &nbsp; or swipe to change slide"
 format:
   revealjs: 
     theme: default
@@ -83,6 +83,12 @@ Test
 -   We tested the assumption with a matched market test (explain)
 -   We found incremental xyz, worth $xx in profit over the course of a year
 - BUTTONS FOR RESET, SHOW OPTIMAL. This solution drives xyz cards from a, b and c (conditional: but the budget is overspent by x)
+$$
+Approved Credit Cards = 80 * ln(Search Spend) + 20 * ln(Social Spend) + 45 * ln(DisplaySpend) + 130
+$$
+**Approved Credit Cards** = 80 * ln(<b style='color:#4D77A5;'>Search Spend</b>) + 20 * ln(<b style='color:#F28E2C'>Banner Spend</b>) + 45 * ln(<b style='color:#E15759'>Social Spend</b>) + 130
+
+<p id="formula"></p>
 
 ```{ojs}
 //| panel: sidebar
@@ -150,9 +156,12 @@ Inputs.button([
                   set(viewof Spend_display, 11000)}]                
                   ])
                   
+document.getElementById("formula").innerHTML = "<b>Approved Credit Cards</b> = 80 *ln(<b style='color:#4D77A5;'>" + Number(Spend_search.toFixed(0)) + "</b>) + ln(<b style='color:#F28E2C'>" + (Number(Spend_display.toFixed(0))) + "</b>) + ln(<b style='color:#E15759'>" + (Number(Spend_social.toFixed(0)))+"</b>)"
+
 document.getElementById("spend").innerHTML = "Total spend: <b>$" + (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))+" USD</b>"
 
 document.getElementById("budget").innerHTML = "Remaining budget: <b>$" + (36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))))+" USD</b>"
+
 html`
 <p>&nbsp;</p>
 `

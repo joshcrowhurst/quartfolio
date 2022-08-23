@@ -44,6 +44,13 @@ This is a short summary of my background:
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
 # And these are a few projects that I am proud of:
+
+<style>
+#and-these-are-a-few-projects-that-i-am-proud-of h1 {
+    font-size:1em;
+}
+</style>
+
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::

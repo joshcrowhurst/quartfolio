@@ -1,9 +1,9 @@
 ---
-title: "Josh Crowhurst: Analytics Portfolio <style>.past .slide-background-content {background:#43464B;}</style>"
+title: "Josh Crowhurst: Analytics Portfolio"
 subtitle: "<b style='color:#5878A3;'>Insight</b> &nbsp;&nbsp;&nbsp;<b style='color:#E49344'>Communication </b>&nbsp;&nbsp;&nbsp;<b style='color:#D1605E;'>Implementation</b> &nbsp;&nbsp;&nbsp;<b style='color:#A77C9F;'>Analytics Team Management</b> <br><br><i style='font-style:italic; font-size:0.8em;'>Use arrow keys  &nbsp; ⬅️ ➡️  &nbsp; or swipe to change slide</i>"
 format:
   revealjs: 
-    theme: default
+    theme: [default, custom.scss]
     slide-number: true
     preview-links: auto
     transition: slide
@@ -14,7 +14,7 @@ format:
 ---
 ## Hi, I'm Josh 👋 
 ::: {layout="[[-1], [1], [-1]]"}
-This is a short summary of my background:
+A quick summary of my background:
 ![](timeline.png){fig-align="center"}
 
 :::
@@ -344,7 +344,7 @@ xyz
 </style>
 
 ## Winning Wines 🍷
-
+Take a photo at Watsons Wine
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::

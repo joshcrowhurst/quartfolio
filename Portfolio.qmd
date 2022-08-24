@@ -14,7 +14,7 @@ format:
 ---
 ## Hi, I'm Josh 👋 
 ::: {layout="[[-1], [1], [-1]]"}
-A quick summary of my background:
+
 ![](timeline.png){fig-align="center"}
 
 :::
@@ -36,17 +36,26 @@ A quick summary of my background:
 ## The Attribution Problem
 <!-- A big problem you worked on. Introduce one of your biggest or most impactful projects from a recent job. What was the problem? -->
 
-https://www.liftlab.com for ideas on how to frame this
-
 :::: {.columns}
 
-::: {.column width="50%"}
-- The problem: attribution becoming increasingly fraught with cookie death and across walled gardens
-- No clarity on what channels were driving what outcomes
+::: {.column width="66%"}
+NEED TO MIDDLE ALIGN THIS
+
+In online advertising, marketers strive to allocate their ad budgets efficiently -- investing at the right level in channels that perform, while avoiding diminishing returns relating to overspend. 
+
+<br> Efficient budget allocation can make the difference between positive return on marketing investment, and a pile of wasted cash. To get it right, marketers need to know which channels are truly driving incremental performance. 
+
+<br> Once-popular approaches like multi-touch and rules-based attribution have become increasingly less reliable, as the quality of user-level tracking across the web degrades. 
+
+<br><b>The problem:</b> my client, a multinational universal bank, wanted to allocate their online ad budget in an evidence-based way, but did not have a reliable model to evaluate which channels were pulling the most weight. 
 :::
 
-::: {.column width="50%"}
-img here
+::: {.column width="33%"}
+Photo of wannamaker 
+
+ “Half the money I spend on advertising is wasted; the trouble is, I don’t know which half.”
+ 
+ 
 :::
 
 ::::
@@ -55,23 +64,21 @@ img here
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
 
-## Digital Media Mix Model
+## Enter the Media Mix Model
 <!-- Slide 4: Your solution. How did you solve the problem in the prior slide? Include screenshots of charts, reports, or architectural diagrams of what you built. -->
-<b>Solution:</b> build a media mix model to estimate the incremental impact of each ad channel. This led to three useful outcomes: 
-
+<p style="line-height:1"><b>Solution:</b> build a media mix model to estimate the incremental impact of each ad channel. This led to three useful outcomes:</style></p>
 - Validated that current levels of spend were delivering positive ROI (we were not over-spending)
 - Quantified the opportunity size for MMM-based spending: up to a 6 digit increase in incremental $USD profit per year
 - Testable hypotheses that we were under-invested in search ads and over-invested in social ads
 
-**Model:** $Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130$
+<!--**Model:** $Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130$-->
 <!--**Approved Credit Cards** = 80 * ln(<b style='color:#4D77A5;'>Search Spend</b>) + 20 * ln(<b style='color:#F28E2C'>Banner Spend</b>) + 45 * ln(<b style='color:#E15759'>Social Spend</b>) + 130-->
 <!--<p id="formula"></p>-->
 ```{ojs}
 //| panel: sidebar
-html`<b style="font-size:1.2em;">Monthly Ad Spend ($USD)</b><br>
+html`<b style="font-size:1em;">Monthly Ad Spend ($USD)</b><br>
 
-<i style="color:#585858; font-style:italic;">Use the sliders to allocate monthly spending by channel</i>
-<p></p>
+<i style="color:#585858; font-style:italic; font-size:0.8em; line-height:0;">Use the sliders to allocate monthly spending by channel</i>
 `
 viewof Spend_search = Inputs.range(
   [400, 25200], 
@@ -98,6 +105,19 @@ html`
 .observablehq--string {
   display: none;
 }
+.cell-output cell-output-display {
+  display: none;
+}
+layout-sidebar layout-sidebar-left {
+  margin-top: 0;
+}
+.reveal .layout-sidebar {
+    margin-top: 0;
+}
+
+.reveal .panel-input, .reveal .panel-sidebar {
+    background-color: #D6D2CC;
+}
 .outputs {
   font-size: 0.5em;
 }
@@ -112,10 +132,10 @@ hr.dotted {
 `
 {
   if((36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))) < 0){
-    document.getElementById("budget").style.color= "red";
+    document.getElementById("budget").style.color= "#D1605E";
     return "Over budget"
   }else{
-    document.getElementById("budget").style.color= "black";
+    document.getElementById("budget").style.color= "#43464B";
     return "Within budget"
   }
 }
@@ -149,7 +169,9 @@ html`
 <b style="font-size:0.7em">Media Efficiency by Channel</b>
 `
 Plot.plot({
-  marginRight: 155,
+  marginRight: 250,
+  marginTop: 30,
+  marginLeft: 60,
   height: 330,
   marks: [
     Plot.line(data, 
@@ -164,8 +186,13 @@ Plot.plot({
       y: "Additional Incremental Approved Credit Cards", 
       r: 7,
       stroke: "channel", 
-      fill: "white"})
-  ]
+      fill: "white",
+      symbol: "diamond2"})
+  ],
+  style: {
+    background: "#F7F6F4",
+    fontSize: "0.4em"
+  }
 })
 
 html`
@@ -185,9 +212,6 @@ filtered = data.filter(function(penguin) {
       Spend_search == penguin.Spend && penguin.channel.includes("Google Search");
 })
 ```
-::: footer
-[**Contact Me**](mailto:josh.crowhurst@gmail.com)
-:::
 
 ## Testing for Incremental Ad Impact
 <b>The Problem:</b> We decided to test the hypothesis that we were under-invested in paid search advertising. We needed a way to formally test that increased spend would deliver incremental approved credit cards, as the model suggested. 

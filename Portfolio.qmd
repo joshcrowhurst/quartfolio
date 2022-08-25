@@ -8,6 +8,7 @@ format:
     preview-links: auto
     transition: slide
     transition-speed: fast
+    css: style.css
   html:
     link-external-newwindow: true
     backgroundcolor: "#F9F6F1"
@@ -36,26 +37,29 @@ format:
 ## The Attribution Problem
 <!-- A big problem you worked on. Introduce one of your biggest or most impactful projects from a recent job. What was the problem? -->
 
-:::: {.columns}
+:::: {.columns .v-center-container}
 
-::: {.column width="66%"}
-NEED TO MIDDLE ALIGN THIS
+::: {.column width="56%"}
 
-In online advertising, marketers strive to allocate their ad budgets efficiently -- investing at the right level in channels that perform, while avoiding diminishing returns relating to overspend. 
+[In online advertising, marketers strive to allocate their ad budgets efficiently -- investing at the right level in channels that perform, while avoiding diminishing returns relating to overspend.]{.fragment fragment-index="1" .semi-fade-out}
 
-<br> Efficient budget allocation can make the difference between positive return on marketing investment, and a pile of wasted cash. To get it right, marketers need to know which channels are truly driving incremental performance. 
+[<br> Efficient budget allocation can make the difference between positive return on marketing investment, and a pile of wasted cash. To get it right, marketers need to know which channels are truly driving incremental performance.]{.fragment fragment-index="1" .semi-fade-out}
 
-<br> Once-popular approaches like multi-touch and rules-based attribution have become increasingly less reliable, as the quality of user-level tracking across the web degrades. 
+[<br> Once-popular approaches like multi-touch and rules-based attribution have become increasingly less reliable, as the quality of user-level tracking across the web degrades.]{.fragment fragment-index="1" .semi-fade-out}
 
-<br><b>The problem:</b> my client, a multinational universal bank, wanted to allocate their online ad budget in an evidence-based way, but did not have a reliable model to evaluate which channels were pulling the most weight. 
+[<br><b>The problem:</b> my client, a multinational bank, wanted to allocate their online budget in a data-backed way, but did not have a strong model to identify the channels that were pulling the most weight.]{.fragment fragment-index="1"} 
+
+:::
+
+::: {.column width="10%"}
+
 :::
 
 ::: {.column width="33%"}
-Photo of wannamaker 
-
- “Half the money I spend on advertising is wasted; the trouble is, I don’t know which half.”
- 
- 
+<center> 
+![](wanamaker.png){fig-align="center"}
+<blockquote style="font-size:0.5em; font-style:italic;">Half the money I spend on advertising is wasted; the trouble is, I don’t know which half.</blockquote>
+<p style="font-size:0.5em;">A famous quote often attributed to U.S. retail giant John Wanamaker</p></center>
 :::
 
 ::::
@@ -214,17 +218,30 @@ filtered = data.filter(function(penguin) {
 ```
 
 ## Testing for Incremental Ad Impact
-<b>The Problem:</b> We decided to test the hypothesis that we were under-invested in paid search advertising. We needed a way to formally test that increased spend would deliver incremental approved credit cards, as the model suggested. 
+:::: {.columns .v-center-container}
+
+::: {.column width="50%"}
+
+<b>The Problem:</b> We decided to test the hypothesis that we were under-invested in paid search ads, and that increasing spend would indeed deliver incremental performance.  
  
-<b>The Solution:</b> run a matched-markets test. This is a type of quasi-experiment, following this process:
+<b>The Solution:</b> run a matched-market test as follows:
 
-- Two geographical markets that historically follow similar performance trends are identified
-- Spending is increased (or, alternatively, can be paused) in only one of the two (the "test market")
-- All else being equal, performance changes in the test market that differ significantly from the control market can be attributed to the change in spend
+- Identify two geographical markets that typically follow similar performance trends
+- Increase spending in one of the two - the "test market" 
+- Significant changes in test market performance that diverge from control can be attributed to change in spend
 
-Our result: 
+We increased our spend by +x% in our test market. Our result: 
 
-- xyz amazing things
+- <b style="color:#557563">+44% uplift</b> in new credit card applications in test market 
+- This translates to annual incremental revenue up to +$XXXXXX USD if budget recommendation is adopted across the country 
+
+:::
+
+::: {.column width="50%"}
+![](inctest.png){fig-align="center"}
+:::
+
+::::
 
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)

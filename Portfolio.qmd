@@ -1,6 +1,5 @@
 ---
-title: "Josh Crowhurst: Analytics Portfolio"
-subtitle: "<b style='color:#5878A3;'>Insight</b> &nbsp;&nbsp;&nbsp;<b style='color:#E49344'>Communication </b>&nbsp;&nbsp;&nbsp;<b style='color:#D1605E;'>Implementation</b> &nbsp;&nbsp;&nbsp;<b style='color:#A77C9F;'>Analytics Team Management</b> <br><br><i style='font-style:italic; font-size:0.8em;'>Use arrow keys  &nbsp; ⬅️ ➡️  &nbsp; or swipe to change slide</i>"
+title: "<b style='font-size:1.1em'>Josh Crowhurst:</b> <b style='font-size:0.7em; font-style:normal;'>Analytics Portfolio</b>"
 format:
   revealjs: 
     theme: [default, custom.scss]
@@ -9,6 +8,10 @@ format:
     transition: slide
     transition-speed: fast
     css: style.css
+    title-slide-attributes:
+      data-background-image: titleslide.png
+      data-background-size: cover  
+      text-align: left
   html:
     link-external-newwindow: true
     backgroundcolor: "#F9F6F1"
@@ -34,69 +37,93 @@ format:
 ::: footer
 [**Contact Me**](mailto:josh.crowhurst@gmail.com)
 :::
-## The Attribution Problem
-<!-- A big problem you worked on. Introduce one of your biggest or most impactful projects from a recent job. What was the problem? -->
-
-:::: {.columns .v-center-container}
-
-::: {.column width="56%"}
-
-[In online advertising, marketers strive to allocate their ad budgets efficiently -- investing at the right level in channels that perform, while avoiding diminishing returns relating to overspend.]{.fragment fragment-index="1" .semi-fade-out}
-
-[<br> Efficient budget allocation can make the difference between positive return on marketing investment, and a pile of wasted cash. To get it right, marketers need to know which channels are truly driving incremental performance.]{.fragment fragment-index="1" .semi-fade-out}
-
-[<br> Once-popular approaches like multi-touch and rules-based attribution have become increasingly less reliable, as the quality of user-level tracking across the web degrades.]{.fragment fragment-index="1" .semi-fade-out}
-
-[<br><b>The problem:</b> my client, a multinational bank, wanted to allocate their online budget in a data-backed way, but did not have a strong model to identify the channels that were pulling the most weight.]{.fragment fragment-index="1"} 
-
-:::
-
-::: {.column width="10%"}
-
-:::
-
-::: {.column width="33%"}
-<center> 
-![](wanamaker.png){fig-align="center"}
-<blockquote style="font-size:0.5em; font-style:italic;">Half the money I spend on advertising is wasted; the trouble is, I don’t know which half.</blockquote>
-<p style="font-size:0.5em;">A famous quote often attributed to U.S. retail giant John Wanamaker</p></center>
-:::
-
-::::
-
-::: footer
-[**Contact Me**](mailto:josh.crowhurst@gmail.com)
-:::
 
 ## Enter the Media Mix Model
+
 <!-- Slide 4: Your solution. How did you solve the problem in the prior slide? Include screenshots of charts, reports, or architectural diagrams of what you built. -->
-<p style="line-height:1"><b>Solution:</b> build a media mix model to estimate the incremental impact of each ad channel. This led to three useful outcomes:</style></p>
+
+<b>Solution:</b> build a media mix model to estimate the impact of each ad channel.
+
+Media mix modelling is a type of statistical analysis that looks at correlations between channel spends and performance outcomes.
+
+It has existed for decades, and is effective in evaluating the contribution of both online and offline marketing, while controlling for factors such as competitor spending, macro-economic conditions, and advertising fatigue.
+
+In the past few years, MMM has regained popularity as an alternative to attribution-based approaches because it does not rely on individual-level tracking.
+
+A simplified version of the model <span style="font-style:italic;">(note: to avoid sharing confidential data, all numbers have been changed):</span>
+
+$$Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130$$
+
+Our model had three useful outcomes:
+
 - Validated that current levels of spend were delivering positive ROI (we were not over-spending)
 - Quantified the opportunity size for MMM-based spending: up to a 6 digit increase in incremental $USD profit per year
 - Testable hypotheses that we were under-invested in search ads and over-invested in social ads
 
-<!--**Model:** $Approved Credit Cards = 80 * \ln(Search Spend) + 20 * \ln(Social Spend) + 45 * \ln(DisplaySpend) + 130$-->
 <!--**Approved Credit Cards** = 80 * ln(<b style='color:#4D77A5;'>Search Spend</b>) + 20 * ln(<b style='color:#F28E2C'>Banner Spend</b>) + 45 * ln(<b style='color:#E15759'>Social Spend</b>) + 130-->
+
 <!--<p id="formula"></p>-->
+
+## Media Mix Model: Interactive Demo
+
+```{ojs}
+
+data = FileAttachment("palmer-penguins.csv").csv({ typed: true })
+
+```
+
+```{ojs}
+
+filtered = data.filter(function(penguin) {
+
+  return Spend_social == penguin.Spend && penguin.channel.includes("Social Media") ||
+
+    Spend_display == penguin.Spend && penguin.channel.includes("Online Banner & Programmatic") ||
+
+      Spend_search == penguin.Spend && penguin.channel.includes("Google Search");
+
+})
+
+```
+
+::: {layout="[[-1], [1], [-1]]"}
 ```{ojs}
 //| panel: sidebar
+
 html`<b style="font-size:1em;">Monthly Ad Spend ($USD)</b><br>
 
+ 
+
 <i style="color:#585858; font-style:italic; font-size:0.8em; line-height:0;">Use the sliders to allocate monthly spending by channel</i>
+
 `
+
 viewof Spend_search = Inputs.range(
-  [400, 25200], 
+
+  [400, 25200],
+
   {value: 12000, step: 400, label: "Google Search Spend"}
+
 )
+
 viewof Spend_display = Inputs.range(
-  [400, 25200], 
+
+  [400, 25200],
+
   {value: 12000, step: 400, label: "Online Banner Spend"}
+
 )
+
 viewof Spend_social = Inputs.range(
-  [400, 25200], 
+
+  [400, 25200],
+
   {value: 12000, step: 400, label: "Social Media Spend"}
+
 )
+
 html`
+
 <p></p>
 <p id="spend" style="font-size:1em;"></p>
 <p id="budget" style="font-size:1em;"></p>
@@ -116,30 +143,37 @@ layout-sidebar layout-sidebar-left {
   margin-top: 0;
 }
 .reveal .layout-sidebar {
-    margin-top: 0;
+   margin-top: 0;
 }
-
 .reveal .panel-input, .reveal .panel-sidebar {
     background-color: #D6D2CC;
 }
+
 .outputs {
   font-size: 0.5em;
 }
+
 button.btn {
   margin-left: 5px;
   margin-right: 5px;
 }
 hr.dotted {
-  border-top: 0.75px dotted #585858;
+ border-top: 0.75px dotted #585858;
 }
+
 </style>
 `
 {
   if((36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))) < 0){
+
     document.getElementById("budget").style.color= "#D1605E";
+
     return "Over budget"
+
   }else{
+
     document.getElementById("budget").style.color= "#43464B";
+
     return "Within budget"
   }
 }
@@ -148,74 +182,102 @@ html`
 <p>&nbsp;</p>
 `
 Inputs.button([
-  ["Reset All", () => {set(viewof Spend_search, 12000), 
+  ["Reset All", () => {set(viewof Spend_search, 12000),
+
                   set(viewof Spend_social, 12000),
+
                   set(viewof Spend_display, 12000)}],
-  ["Optimal Mix", () => {set(viewof Spend_search, 20000), 
+
+  ["Optimal Mix", () => {set(viewof Spend_search, 20000),
+
                   set(viewof Spend_social, 4800),
-                  set(viewof Spend_display, 11200)}]                
+
+                  set(viewof Spend_display, 11200)}]               
+
                   ])
-                  
+
 //document.getElementById("formula").innerHTML = "<b>Approved Credit Cards</b> = 80 * ln(<b style='color:#4D77A5;'>" + Number(Spend_search.toFixed(0)) + "</b>) + 45 * ln(<b style='color:#F28E2C'>" + (Number(Spend_display.toFixed(0))) + "</b>) + 20 * ln(<b style='color:#E15759'>" + (Number(Spend_social.toFixed(0)))+"</b>) + 130 = " + Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130))
 
 document.getElementById("spend").innerHTML = "Total spend: <b>$" + (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0)))+" USD</b>"
 
 document.getElementById("budget").innerHTML = "Remaining budget: <b>$" + (36000 - (Number(Spend_social.toFixed(0)) + Number(Spend_display.toFixed(0)) + Number(Spend_search.toFixed(0))))+" USD</b>"
+
 function set(input, value) {
+
   input.value = value;
+
   input.dispatchEvent(new Event("input", {bubbles: true}));
+
 }
 ```
 ```{ojs}
 //| panel: fill
-
 html`
 <b style="font-size:0.7em">Media Efficiency by Channel</b>
 `
 Plot.plot({
-  marginRight: 250,
-  marginTop: 30,
-  marginLeft: 60,
-  height: 330,
-  marks: [
-    Plot.line(data, 
-      { x: "Spend", y: "Additional Incremental Approved Credit Cards", stroke: "channel" }
-    ),
-    Plot.text(data, Plot.selectLast({x: "Spend", y: "Additional Incremental Approved Credit Cards", z: "channel", text: "channel", textAnchor: "start", dx: 3})),
-    Plot.dot(filtered,{
-      r: {
-        range: [10, 11]
-      },
-      x: "Spend", 
-      y: "Additional Incremental Approved Credit Cards", 
-      r: 7,
-      stroke: "channel", 
-      fill: "white",
-      symbol: "diamond2"})
-  ],
-  style: {
-    background: "#F7F6F4",
-    fontSize: "0.4em"
-  }
-})
 
+  marginRight: 250,
+
+  marginTop: 30,
+
+  marginLeft: 60,
+
+  height: 330,
+
+  marks: [
+
+    Plot.line(data,
+
+      { x: "Spend", y: "Additional Incremental Approved Credit Cards", stroke: "channel" }
+
+    ),
+
+    Plot.text(data, Plot.selectLast({x: "Spend", y: "Additional Incremental Approved Credit Cards", z: "channel", text: "channel", textAnchor: "start", dx: 3})),
+
+    Plot.dot(filtered,{
+
+      r: {
+
+        range: [10, 11]
+
+     },
+
+      x: "Spend",
+
+      y: "Additional Incremental Approved Credit Cards",
+
+      r: 7,
+
+      stroke: "channel",
+
+      fill: "white",
+
+      symbol: "diamond2"})
+
+  ],
+
+  style: {
+
+    background: "#F7F6F4",
+
+    fontSize: "0.4em"
+
+  }
+
+})
 html`
 <p></p>
 <p id="conclusion" style="font-size:0.5em;"></p>`
-
 document.getElementById("conclusion").innerHTML = "Our model predicts that this spend will generate <b>"+ Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130)) + "</b> approved credit cards per month, which is an uplift of <b>"+(Math.round((80 * Math.log(Number(Spend_search.toFixed(0))) + 45 * Math.log(Number(Spend_display.toFixed(0)))+20 * Math.log(Number(Spend_social.toFixed(0))) + 130)) - 1492) +"</b> vs the default budget allocation."
+```
+:::
 
-```
-```{ojs}
-data = FileAttachment("palmer-penguins.csv").csv({ typed: true })
-```
-```{ojs}
-filtered = data.filter(function(penguin) {
-  return Spend_social == penguin.Spend && penguin.channel.includes("Social Media") ||
-    Spend_display == penguin.Spend && penguin.channel.includes("Online Banner & Programmatic") ||
-      Spend_search == penguin.Spend && penguin.channel.includes("Google Search");
-})
-```
+::: footer
+
+[**Contact Me**](mailto:josh.crowhurst@gmail.com)
+
+:::
 
 ## Testing for Incremental Ad Impact
 :::: {.columns .v-center-container}
